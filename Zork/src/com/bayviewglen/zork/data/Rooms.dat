@@ -1,1 +1,33 @@
-Grassy Knoll:You stand in a forrest clearing upon a sheet of fresh set grass. 
+Room Name: Grassy Knoll
+Room Description: You stand in a forrest clearing upon a sheet of fresh set grass. 
+Exit Rooms: S-Abyss, N-Tall Tree
+Room Name: Abyss 
+Room Description: You peer over what seems like a never ending depth infront of your toes. The idea of throwing yourself in crosses your mind.
+Exit Rooms: N-Grassy Knoll
+Room Name: Tall Tree
+Room Description: You stand at the foot of a tall tree. It seems like it may have been climbable not too long ago, but it is far too frail now.
+Exits: S-Grassy Knoll, N-Town Entrance, E-Grassy Knoll, W-Grassy Knoll
+Room Name: Town Entrance
+Room Description: Before you stands the Mountain town of Helixia. A sign damaged sign on the ground infront of you reads "Welcome to Helixia!".
+Exit Rooms: S-Tall Tree, N-Town Square
+Room Name: Town Square
+Room Description: You stand in what would be the commercial district of a larger town. Flanked on either of your two sides you see what seem to be the only two shops in town.
+Exit Rooms: S-Town Entrance, W-Blacksmith, E-Supply Depot, N-Town Road.
+Room Name: Blacksmith
+Room Description: A blacksmith stands infront of you. "Welcome O'Unadorned traveller. Get thee assorted arms and armour for thy travels." He smells like overripe bananas and wine.
+Exit Rooms: E-Town Square
+Room Name: Supply Depot
+Room Description: A supply store manned by a solitary gentleman without much to say.
+Exit Rooms: W-Town Square 
+Room Name: Town Road
+Room Description: As you proceed, you find yourself at the end the broken road that leads into town. To the east: the Town Center, to the south: the town square, and to the west: a mysterious builind upon which the words 'Haus' are written. 
+Exit Rooms: S-Town Center, W-Haus, E-Town Center, D-Cellar
+Room Name: Haus
+Room Description: As you approach the house, a deep feeling of despair falls upon you. The reminder of what once was stops you in your tracks and prevents you from proceeding.
+Exit Rooms: W-Town Road, N-Despair, E-Despair, S-Despair, U-Despair, D-Despair
+Room Name: Despair
+Room Description: Uh.....Uh.....Ah.....Uh.....
+Exit Rooms: W-Town Road, N-Despair, E-Despair, S-Despair, U-Despair, D-Despair
+Room Name: Cellar
+Room Descpription: Your nose if filled with the foul stench of sweat and ogre meat. A passage, far too narrow for any grown man to traverse, leads down from the cellar.
+Exit Rooms: U-Town Road
