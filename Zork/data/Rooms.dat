@@ -98,25 +98,25 @@ Room Name: Maze Entrance
 Room Description: A great maze is infront of you. Will you proceed?
 Exit Rooms: N-Bridge Landing, S-Maze 1
 Room Name: Maze 1
-Room Description:
+Room Description: You're lost, eh?
 Exit Rooms: N-Maze Entrance, S-Maze 2, W-Maze 3
 Room Name: Maze 2
-Room Description:
+Room Description: You're lost, eh?
 Exit Rooms: W-Maze 3, D-Maze 5, E-Maze 4, N-Maze 1 
 Room Name: Maze 3
-Room Description:
+Room Description: You're lost, eh?
 Exit Rooms: N-Maze 1, W-Maze 2
 Room Name: Maze 4 
-Room Description:
+Room Description: You're lost, eh?
 Exit Rooms: W-Maze 2, U-Storage Room, D-Maze 6
 Room Name: Maze 5
-Room Description:
+Room Description: You're lost, eh?
 Exit Rooms: U-Maze 2, S-Maze 6, W-Dead End
 Room Name: Dead End
 Room Description: Damn... Maybe this end has a point?
 Exit Rooms: E-Maze 5
 Room Name: Maze 6
-Room Description:
+Room Description: You're lost, eh?
 Exit Rooms: N-Maze 5, U-Maze 4
 Room Name: Storage Room
 Room Description: A good place to store stuff... obviously.
@@ -126,4 +126,4 @@ Room Description: You cover your ears as the deafening pitch tears your soul to 
 Exit Rooms: W-Storage Room, S-Boss Room
 Room Name: Boss Room
 Room Description: Card Michael Kevin?!?!
-Exit Rooms: 
+Exit Rooms: N-Storage Room
