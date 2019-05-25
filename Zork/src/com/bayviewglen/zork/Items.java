@@ -9,6 +9,10 @@ public abstract class Items {
 	public abstract String getDescription();
 	public abstract String getName();
 
+	public abstract void setWeight(int weight);
+	public abstract void setName(String name);
+	public abstract void setDescription(String description);
+
 	
 }
 

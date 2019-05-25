@@ -30,6 +30,66 @@ class Game
     // In a hashmap keys are case sensitive.
     // masterRoomMap.get("GREAT_ROOM") will return the Room Object that is the Great Room (assuming you have one).
     private HashMap<String, Room> masterRoomMap;
+    private HashMap<String, KeyItem> masterKeyItemMap;
+    private HashMap<String, UtilityItem> masterUtilityItemMap;
+    
+    private void initKeyItems(String fileName) throws Exception{
+    	masterKeyItemMap = new HashMap<String, KeyItem>();
+    	Scanner itemScanner;
+		try {    
+			itemScanner = new Scanner(new File(fileName));
+			while(itemScanner.hasNext()){
+				KeyItem item = new KeyItem();
+				// Read the Name
+				String itemName = itemScanner.nextLine();
+				item.setName(itemName.split(":")[1].trim());
+				// Read the Description
+				String itemDescription = itemScanner.nextLine();
+				item.setDescription(itemDescription.split(":")[1].replaceAll("<br>", "\n").trim());
+				// Read the Weight
+				String itemWeight = itemScanner.nextLine();
+				item.setWeight(Integer.parseInt(itemWeight.split(":")[1]));
+				// Read item Contents
+				String itemContents = itemScanner.nextLine();
+				item.setContents(itemContents.split(":")[1]);
+				
+				masterKeyItemMap.put(itemName.toUpperCase().substring(10).trim().replaceAll(" ",  "_"), item);
+							
+			}    	
+			itemScanner.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+    }   
+    
+    private void initUtilityItems(String fileName) throws Exception{
+    	masterUtilityItemMap = new HashMap<String, UtilityItem>();
+    	Scanner itemScanner;
+		try {    
+			itemScanner = new Scanner(new File(fileName));
+			while(itemScanner.hasNext()){
+				UtilityItem item = new UtilityItem();
+				// Read the Name
+				String itemName = itemScanner.nextLine();
+				item.setName(itemName.split(":")[1].trim());
+				// Read the Description
+				String itemDescription = itemScanner.nextLine();
+				item.setDescription(itemDescription.split(":")[1].replaceAll("<br>", "\n").trim());
+				// Read the Weight
+				String itemWeight = itemScanner.nextLine();
+				item.setWeight(Integer.parseInt(itemWeight.split(":")[1]));
+				// Read item Contents
+				String itemPower = itemScanner.nextLine();
+				item.setPower(Integer.parseInt(itemPower.split(":")[1]));
+				
+				masterUtilityItemMap.put(itemName.toUpperCase().substring(10).trim().replaceAll(" ",  "_"), item);
+							
+			}    	
+			itemScanner.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+    }
     
     private void initRooms(String fileName) throws Exception{
     	masterRoomMap = new HashMap<String, Room>();
@@ -75,25 +135,24 @@ class Game
 					Room exitRoom = masterRoomMap.get(roomName2.toUpperCase().replaceAll(" ", "_"));
 					roomTemp.setExit(s.trim().charAt(0), exitRoom);
 					
-				}
-				
-				
+				}				
 			}
     	
 			roomScanner.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-    }    
+    }
 /**
      * Create the game and initialise its internal map.
      */
     public Game() {
         try {
 			initRooms("data/Rooms.dat");
+			initKeyItems("data/KeyItems.dat");
+			initUtilityItems("data/UtilityItems.dat");
 			currentRoom = masterRoomMap.get("GRASSY_KNOLL");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         parser = new Parser();
