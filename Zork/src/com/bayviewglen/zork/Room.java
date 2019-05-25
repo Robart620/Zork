@@ -14,6 +14,7 @@ package com.bayviewglen.zork;
  * to the neighbouring room, or null if there is no exit in that direction.
  */
 import java.util.Set;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 class Room 
@@ -21,6 +22,7 @@ class Room
 	private String roomName;
     private String description;
     private HashMap<String, Room> exits;        // stores exits of this room.
+    public ArrayList<Items> itemsList;
 /**
      * Create a room described "description". Initially, it has no exits.
      * "description" is something like "a kitchen" or "an open court yard".
@@ -30,13 +32,13 @@ class Room
         this.description = description;
         exits = new HashMap<String, Room>();
     }
-public Room() {
+    public Room() {
 		// default constructor.
     	roomName = "DEFAULT ROOM";
     	description = "DEFAULT DESCRIPTION";
     	exits = new HashMap<String, Room>();
 	}
-public void setExit(char direction, Room r) throws Exception{
+	public void setExit(char direction, Room r) throws Exception{
     	String dir= "";
     	switch (direction){
     	case 'E': dir = "east";break;
@@ -110,16 +112,16 @@ public void setExit(char direction, Room r) throws Exception{
     {
         return (Room)exits.get(direction);
     }
-public String getRoomName() {
+    public String getRoomName() {
 		return roomName;
 	}
-public void setRoomName(String roomName) {
+    public void setRoomName(String roomName) {
 		this.roomName = roomName;
 	}
-public String getDescription() {
+    public String getDescription() {
 		return description;
 	}
-public void setDescription(String description) {
+    public void setDescription(String description) {
 		this.description = description;
 	}
 }

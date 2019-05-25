@@ -1,6 +1,7 @@
 package com.bayviewglen.zork;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 /**
@@ -32,6 +33,7 @@ class Game
     private HashMap<String, Room> masterRoomMap;
     private HashMap<String, KeyItem> masterKeyItemMap;
     private HashMap<String, UtilityItem> masterUtilityItemMap;
+    public int inventoryWeight;
     
     private void initKeyItems(String fileName) throws Exception{
     	masterKeyItemMap = new HashMap<String, KeyItem>();
@@ -116,6 +118,20 @@ class Game
 				
 				exits.put(roomName.substring(10).trim().toUpperCase().replaceAll(" ",  "_"), temp);
 				
+				String items = roomScanner.nextLine().trim();
+				if(items.length() > 6) {
+					String[] itemsInRoom = items.split(":")[1].split(",");
+					for (String s : itemsInRoom) {
+						if(!(masterKeyItemMap.get(s) == null))
+							room.itemsList.add(masterKeyItemMap.get(s));
+						else if(!(masterKeyItemMap.get(s) == null))
+							room.itemsList.add(masterUtilityItemMap.get(s));
+						else
+							System.out.println("Item \"" + s + "\" was not found");
+					}
+				}
+					
+				
 				// This puts the room we created (Without the exits in the masterMap)
 				masterRoomMap.put(roomName.toUpperCase().substring(10).trim().replaceAll(" ",  "_"), room);
 				
@@ -148,9 +164,9 @@ class Game
      */
     public Game() {
         try {
-			initRooms("data/Rooms.dat");
 			initKeyItems("data/KeyItems.dat");
 			initUtilityItems("data/UtilityItems.dat");
+			initRooms("data/Rooms.dat");
 			currentRoom = masterRoomMap.get("GRASSY_KNOLL");
 		} catch (Exception e) {
 			e.printStackTrace();
