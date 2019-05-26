@@ -183,7 +183,7 @@ class Game
 				
 				String enemy = roomScanner.nextLine().trim();
 				if (enemy.length() > 6) {
-					room.roomEnemy = masterEnemyMap.get(enemy.split(":")[1].trim().toUpperCase().substring(10).replaceAll(" ",  "_"));
+					room.roomEnemy = masterEnemyMap.get(enemy.split(":")[1].trim().toUpperCase().replaceAll(" ",  "_"));
 				}
 					
 				
