@@ -1,11 +1,11 @@
 Room Name: Grassy Knoll
 Room Description: You stand in a forest clearing upon a sheet of fresh set grass. 
 Exit Rooms: S-Abyss, N-Tall Tree
-Items:
+Items: Piece of Paper, Shoddy Leaf Hat
 Room Name: Abyss 
 Room Description: You peer over what seems like a never ending depth infront of your toes. The idea of throwing yourself in crosses your mind.
 Exit Rooms: N-Grassy Knoll
-Items:
+Items: Card-Key
 Room Name: Tall Tree
 Room Description: You stand at the foot of a tall tree. It seems like it may have been climbable not too long ago, but it is far too frail now.
 Exits: S-Grassy Knoll, N-Town Entrance, E-Grassy Knoll, W-Grassy Knoll
@@ -39,9 +39,9 @@ Room Description: Uh.....Uh.....Ah.....Uh.....
 Exit Rooms: W-Town Road, N-Despair, E-Despair, S-Despair, U-Despair, D-Despair
 Items:
 Room Name: Cellar
-Room Descpription: Your nose if filled with the foul stench of sweat and ogre meat. A passage, far too narrow for any grown man to traverse, leads down from the cellar.
+Room Description: Your nose if filled with the foul stench of sweat and ogre meat. A passage, far too narrow for any grown man to traverse, leads down from the cellar.
 Exit Rooms: U-Town Road
-Items:
+Items: Slab of Meat
 Room Name: Town Center
 Room Description: You stand in what was clearly once a busy part of Helixia. Travelers from all over would can be presumed to have come from far and wide through this small town.
 Exit Rooms: N-Inn Lobby, S-Park, E-Main Path
@@ -159,14 +159,14 @@ Room Description: You're lost, eh?
 Exit Rooms: N-Maze 5, U-Maze 4
 Items:
 Room Name: Storage Room
-Room Description: A good place to store stuff... obviously.
+Room Description: A good place to store stuff... obviously. You hear the faint sound of thunder.
 Exit Rooms: D-Maze 4, E-Screaming Hall
-Items:
+Items: Axe of Asgard
 Room Name: Screaming Halls
 Room Description: You cover your ears as the deafening pitch tears your soul to pieces bit by bit. What monstrosity could make this noi... is that Chiu?
 Exit Rooms: W-Storage Room, S-Boss Room
 Items:
 Room Name: Boss Room
-Room Description: Card Michael Kevin?!?!
+Room Description: Card Master Kevin?!?!
 Exit Rooms: N-Storage Room
-Items:
+Items: Magic Deck
