@@ -147,6 +147,7 @@ Room Name: Foot of Bridge
 Room Description: It's all in the title...
 Exit Rooms: E-Bridge, S-Opening
 Items:
+Enemy:
 Room Name: Bridge
 Room Description: A note is stapled to the flimsy rail, ceremonialy preventing your most timely demise.
 Exit Rooms: W-Foot of Bride, E-Bridge Landing
