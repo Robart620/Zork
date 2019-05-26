@@ -2,94 +2,117 @@ Room Name: Grassy Knoll
 Room Description: You stand in a forest clearing upon a sheet of fresh set grass. 
 Exit Rooms: S-Abyss, N-Tall Tree
 Items:
+Enemy:
 Room Name: Abyss 
 Room Description: You peer over what seems like a never ending depth infront of your toes. The idea of throwing yourself in crosses your mind.
 Exit Rooms: N-Grassy Knoll
 Items:
+Enemy:
 Room Name: Tall Tree
 Room Description: You stand at the foot of a tall tree. It seems like it may have been climbable not too long ago, but it is far too frail now.
 Exits: S-Grassy Knoll, N-Town Entrance, E-Grassy Knoll, W-Grassy Knoll
 Items:
+Enemy:
 Room Name: Town Entrance
 Room Description: Before you stands the Mountain town of Helixia. A sign damaged sign on the ground infront of you reads "Welcome to Helixia!".
 Exit Rooms: S-Tall Tree, N-Town Square
 Items:
+Enemy:
 Room Name: Town Square
 Room Description: You stand in what would be the commercial district of a larger town. Flanked on either of your two sides you see what seem to be the only two shops in town.
 Exit Rooms: S-Town Entrance, W-Blacksmith, E-Supply Depot, N-Town Road.
 Items:
+Enemy:
 Room Name: Blacksmith
 Room Description: A blacksmith stands infront of you. "Welcome O'Unadorned traveller. Get thee assorted arms and armour for thy travels." He smells like overripe bananas and wine.
 Exit Rooms: E-Town Square
 Items:
+Enemy:
 Room Name: Supply Depot
 Room Description: A supply store manned by a solitary gentleman without much to say.
 Exit Rooms: W-Town Square 
 Items:
+Enemy:
 Room Name: Town Road
 Room Description: As you proceed, you find yourself at the end the broken road that leads into town. To the east: the Town Center, to the south: the town square, and to the west: a mysterious builind upon which the words 'Haus' are written. 
 Exit Rooms: S-Town Center, W-Haus, E-Town Center, D-Cellar
 Items:
+Enemy:
 Room Name: Haus
 Room Description: As you approach the house, a deep feeling of despair falls upon you. The reminder of what once was stops you in your tracks and prevents you from proceeding.
 Exit Rooms: W-Town Road, N-Despair, E-Despair, S-Despair, U-Despair, D-Despair
 Items:
+Enemy:
 Room Name: Despair
 Room Description: Uh.....Uh.....Ah.....Uh.....
 Exit Rooms: W-Town Road, N-Despair, E-Despair, S-Despair, U-Despair, D-Despair
 Items:
+Enemy:
 Room Name: Cellar
 Room Descpription: Your nose if filled with the foul stench of sweat and ogre meat. A passage, far too narrow for any grown man to traverse, leads down from the cellar.
 Exit Rooms: U-Town Road
 Items:
+Enemy:
 Room Name: Town Center
 Room Description: You stand in what was clearly once a busy part of Helixia. Travelers from all over would can be presumed to have come from far and wide through this small town.
 Exit Rooms: N-Inn Lobby, S-Park, E-Main Path
 Items:
+Enemy:
 Room Name: Park
 Room Description: You stand in a park... relaxing isn't it?
 Exit Rooms: N-Town Center
 Items:
+Enemy:
 Room Name: Inn Lobby
 Room Description: The warm smile of the lobby attendant greets you as you enter the main floor of the inn.
 Exit Rooms: S-Town Center, U-Your Room, D-Casino
 Items:
+Enemy:
 Room Name: Casino
 Room Description: A stone cold face stares you down. The name plate on the figure's left breast reads 'Card Master Kevin'.
 Exit Rooms: U-Inn Lobby
 Items:
+Enemy:
 Room Name: Your Room
 Room Description: Cozy...
 Exit Rooms: D-Inn Lobby.
 Items:
+Enemy:
 Room Name: Main Path
 Room Description: Ah the warm world's air. What could be better?
 Exit Rooms: W-Town Center, N-Narrow Pass, E-River Crossing
 Items:
+Enemy:
 Room Name: Narrow Pass
 Room Description: The path narrows. You are ambushed by an ogre screaming 'I am one of man. Slay me, but fear ye what happens upon thy return'.
 Exit Rooms: S-Main Pass, E-Stairs
 Items:
+Enemy:
 Room Name: Stairs
 Room Description: A long flight of shallow steps leads up the face of a great mountain ahead of you. This is it.
 Exit Rooms: W-Narrow Pass, N-Cave Mouth
 Items:
+Enemy:
 Room Name: River Crossing
 Room Description: A small river blocks your path eastward... pathetic.
 Exit Rooms: W-Main Pass, E-River Landing
 Items:
+Enemy:
 Room Name: River Landing
 Room Description: Silly river.
 Exit Rooms: W-River Crossing, E-Spooky Grove
 Items:
+Enemy:
 Room Name: Spooky Grove
 Room Description: You fell unnerved... something isn't right. A ghost charges you!
 Exit Rooms: W-River Landing, N-Foot of Cliff
 Items:
+Enemy:
 Room Name: Foot of Cliff
 Room Description: You stand at the foot of a steep cliff. It's scalable... but risky.
 Exit Rooms: U-Cliff Face, S-Spooky Grove
 Items:
+Enemy:
 Room Name: Cliff Face
 Room Description: You're on the face of a cliff... Things have been better.
 Exit Rooms: D-Foot of Cliff, U-Top of Cliff
@@ -98,22 +121,27 @@ Room Name: Top of Cliff
 Room Description: It'd be a long way down... I've got time
 Exit Rooms: D-Cliff Face, W-Cave Mouth
 Items:
+Enemy:
 Room Name: Cave Mouth
 Room Description: Something smells in there...
 Exit Rooms: E-Top of Cliff, S-Stairs, N-Cave Entrance 
 Items:
+Enemy:
 Room Name: Cave Enterance 
 Room Description: The sounds of water rushing drowns can't hide that damn smell.
 Exit Rooms: N-Opening, E-Water Drop-Off
 Items:
+Enemy:
 Room Name: Water Drop-Off
 Room Description: The river carries you down through the cave where a grate allows the water to flow while keeping you from drowning... How creative.
 Exit Rooms: N-Cave Entrance
 Items:
+Enemy:
 Room Name: Opening
 Room Description: An everpresent rattling fills the stuffy air... The Chap-Men
 Exit Rooms: N-Foot of Bridge, E-Water Drop-Off
 Items:
+Enemy:
 Room Name: Foot of Bridge
 Room Description: It's all in the title...
 Exit Rooms: E-Bridge, S-Opening
@@ -122,51 +150,64 @@ Room Name: Bridge
 Room Description: A note is stapled to the flimsy rail, ceremonialy preventing your most timely demise.
 Exit Rooms: W-Foot of Bride, E-Bridge Landing
 Items:
+Enemy:
 Room Name: Bride Landing
 Room Description: Again... It's all in the title
 Exit Rooms: S-Maze Entrance, W-Bride
 Items:
+Enemy:
 Room Name: Maze Entrance
 Room Description: A great maze is infront of you. Will you proceed?
 Exit Rooms: N-Bridge Landing, S-Maze 1
 Items:
+Enemy:
 Room Name: Maze 1
 Room Description: You're lost, eh?
 Exit Rooms: N-Maze Entrance, S-Maze 2, W-Maze 3
 Items:
+Enemy:
 Room Name: Maze 2
 Room Description: You're lost, eh?
 Exit Rooms: W-Maze 3, D-Maze 5, E-Maze 4, N-Maze 1 
 Items:
+Enemy:
 Room Name: Maze 3
 Room Description: You're lost, eh?
 Exit Rooms: N-Maze 1, W-Maze 2
 Items:
+Enemy:
 Room Name: Maze 4 
 Room Description: You're lost, eh?
 Exit Rooms: W-Maze 2, U-Storage Room, D-Maze 6
 Items:
+Enemy:
 Room Name: Maze 5
 Room Description: You're lost, eh?
 Exit Rooms: U-Maze 2, S-Maze 6, W-Dead End
 Items:
+Enemy:
 Room Name: Dead End
 Room Description: Damn... Maybe this end has a point?
 Exit Rooms: E-Maze 5
 Items:
+Enemy:
 Room Name: Maze 6
 Room Description: You're lost, eh?
 Exit Rooms: N-Maze 5, U-Maze 4
 Items:
+Enemy:
 Room Name: Storage Room
 Room Description: A good place to store stuff... obviously.
 Exit Rooms: D-Maze 4, E-Screaming Hall
 Items:
+Enemy:
 Room Name: Screaming Halls
 Room Description: You cover your ears as the deafening pitch tears your soul to pieces bit by bit. What monstrosity could make this noi... is that Chiu?
 Exit Rooms: W-Storage Room, S-Boss Room
 Items:
+Enemy:
 Room Name: Boss Room
 Room Description: Card Michael Kevin?!?!
 Exit Rooms: N-Storage Room
 Items:
+Enemy:
