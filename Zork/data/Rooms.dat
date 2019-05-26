@@ -84,10 +84,10 @@ Exit Rooms: W-Town Center, N-Narrow Pass, E-River Crossing
 Items:
 Enemy:
 Room Name: Narrow Pass
-Room Description: The path narrows. You are ambushed by an ogre screaming 'I am one of man. Slay me, but fear ye what happens upon thy return'.
+Room Description: The path narrows. You are ambushed by a Bellissimogre singing 'I am one of man. Slay me, but fear ye what happens upon thy return'.
 Exit Rooms: S-Main Pass, E-Stairs
 Items:
-Enemy:
+Enemy: Bellissimogre
 Room Name: Stairs
 Room Description: A long flight of shallow steps leads up the face of a great mountain ahead of you. This is it.
 Exit Rooms: W-Narrow Pass, N-Cave Mouth
@@ -104,7 +104,7 @@ Exit Rooms: W-River Crossing, E-Spooky Grove
 Items:
 Enemy:
 Room Name: Spooky Grove
-Room Description: You fell unnerved... something isn't right. A ghost charges you!
+Room Description: You feel unnerved... something isn't right. A ghost charges you!
 Exit Rooms: W-River Landing, N-Foot of Cliff
 Items:
 Enemy:
@@ -119,7 +119,7 @@ Exit Rooms: D-Foot of Cliff, U-Top of Cliff
 Items:
 Enemy:
 Room Name: Top of Cliff
-Room Description: It'd be a long way down... I've got time
+Room Description: It'd be a long way down... You've got time
 Exit Rooms: D-Cliff Face, W-Cave Mouth
 Items:
 Enemy:
@@ -149,7 +149,7 @@ Exit Rooms: E-Bridge, S-Opening
 Items:
 Enemy:
 Room Name: Bridge
-Room Description: A note is stapled to the flimsy rail, ceremonialy preventing your most timely demise.
+Room Description: A note is stapled to the flimsy rail, ceremonially preventing your most timely demise.
 Exit Rooms: W-Foot of Bride, E-Bridge Landing
 Items:
 Enemy:
@@ -159,7 +159,7 @@ Exit Rooms: S-Maze Entrance, W-Bride
 Items:
 Enemy:
 Room Name: Maze Entrance
-Room Description: A great maze is infront of you. Will you proceed?
+Room Description: A great maze is ahead of you. Will you proceed?
 Exit Rooms: N-Bridge Landing, S-Maze 1
 Items:
 Enemy:

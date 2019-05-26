@@ -1,5 +1,15 @@
 Name: Test
 Health: 1
 Damage Per Hit: 1
-Dialogue: eat, me, out
+Dialogue: ap, computer, science
+Item:
+Name: Bellissimogre
+Health: 100
+Damage Per Hit: 20
+Dialogue: I don't like your tone!, Lets up the beats per minute!, Lets up the beats per minute!
+Item: Conductors Club
+Name: Chap-Men
+Health: 100
+Damage Per Hit: 17
+Dialogue: *angry chattering*, *angry chattering*, *angry chattering*
 Item:
