@@ -34,6 +34,7 @@ class Game
     private HashMap<String, KeyItem> masterKeyItemMap;
     private HashMap<String, UtilityItem> masterUtilityItemMap;
     public int inventoryWeight;
+    public final int MAX_INVENTORY_WEIGHT = 100;
     
     private void initKeyItems(String fileName) throws Exception{
     	masterKeyItemMap = new HashMap<String, KeyItem>();

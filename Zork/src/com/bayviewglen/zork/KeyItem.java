@@ -1,6 +1,6 @@
 package com.bayviewglen.zork;
 
-public class KeyItem extends Items {
+class KeyItem extends Items {
 	private String contents;
 	
 	public KeyItem() {

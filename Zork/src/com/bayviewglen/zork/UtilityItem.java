@@ -1,6 +1,6 @@
 package com.bayviewglen.zork;
 
-public class UtilityItem extends Items{
+class UtilityItem extends Items{
 	public int power;
 	
 	public UtilityItem() {
