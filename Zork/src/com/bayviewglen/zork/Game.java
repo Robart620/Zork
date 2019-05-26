@@ -136,7 +136,6 @@ class Game
 				masterRoomMap.put(roomName.toUpperCase().substring(10).trim().replaceAll(" ",  "_"), room);
 				
 				
-				
 				// Now we better set the exits.
 			}
 			
