@@ -1,6 +1,6 @@
 package com.bayviewglen.zork;
 
-public abstract class Items {
+abstract class Items {
 	public int weight;
 	public String description;
 	public String name;
@@ -13,7 +13,6 @@ public abstract class Items {
 	public abstract void setName(String name);
 	public abstract void setDescription(String description);
 
-	
 }
 
 

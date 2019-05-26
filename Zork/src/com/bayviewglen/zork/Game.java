@@ -34,6 +34,7 @@ class Game
     private HashMap<String, KeyItem> masterKeyItemMap;
     private HashMap<String, UtilityItem> masterUtilityItemMap;
     public int inventoryWeight;
+    public final int MAX_INVENTORY_WEIGHT = 100;
     
     private void initKeyItems(String fileName) throws Exception{
     	masterKeyItemMap = new HashMap<String, KeyItem>();
@@ -134,7 +135,6 @@ class Game
 				
 				// This puts the room we created (Without the exits in the masterMap)
 				masterRoomMap.put(roomName.toUpperCase().substring(10).trim().replaceAll(" ",  "_"), room);
-				
 				
 				
 				// Now we better set the exits.
