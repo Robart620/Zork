@@ -117,6 +117,7 @@ Room Name: Cliff Face
 Room Description: You're on the face of a cliff... Things have been better.
 Exit Rooms: D-Foot of Cliff, U-Top of Cliff
 Items:
+Enemy:
 Room Name: Top of Cliff
 Room Description: It'd be a long way down... I've got time
 Exit Rooms: D-Cliff Face, W-Cave Mouth
