@@ -126,11 +126,11 @@ class Game {
 
 				String item = enemyScanner.nextLine().trim();
 				if (item.length() > 6) {
-					String[] items = item.split(":")[1].split(",");
+					String[] items = item.split(": ")[1].split(",");
 					for (String s : items) {
-						if (!(masterKeyItemMap.get(s) == null))
+						if (!(masterKeyItemMap.get(s.toUpperCase().trim().replaceAll(" ", "_")) == null))
 							enemy.setDeathItem(masterKeyItemMap.get(s));
-						else if (!(masterKeyItemMap.get(s) == null))
+						else if (!(masterUtilityItemMap.get(s.toUpperCase().trim().replaceAll(" ", "_")) == null))
 							enemy.setDeathItem(masterUtilityItemMap.get(s));
 						else
 							System.out.println("Enemy Item \"" + s + "\" was not found");
@@ -340,11 +340,13 @@ class Game {
 					+ enemy.getName() + ", killing them instantly.");
 			enemy.setHealth(0);
 		} else {
-			System.out.println("Using your mighty " + weapon.getName() + ", you mess up: " + enemy.getName());
+			System.out.println("Using your mighty " + weapon.getName() + ", you mess up " + enemy.getName() + "a little.");
 			enemy.setHealth(enemy.getHealth() - weapon.getPower());
 		}
-		
-		//TODO enemy damage
+
+		if(enemy.getHealth() > 0) {
+			System.out.println(enemy.getName() + "Hits back. Maybe another hit'll do it?");
+		}
 	}
 
 	/**
@@ -354,7 +356,8 @@ class Game {
 	 * @param enemy
 	 */
 	private void defensiveCombat(Enemy enemy) {
-		System.out.println("While you sat pondering the mysteries of the universe, " + enemy.getName() + " attacked you.");
+		System.out.println("While you sat pondering the mysteries of the universe, " + enemy.getName()
+				+ " attacked you. Try to put up a fight maybe?");
 		playerHealth -= enemy.getDamagePerHit();
 	}
 
