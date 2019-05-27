@@ -1,4 +1,7 @@
 package com.bayviewglen.zork;
+
+import java.util.ArrayList;
+
 /*
  * Author:  Michael Kolling.
  * Version: 1.0
@@ -11,6 +14,8 @@ package com.bayviewglen.zork;
  */
 class CommandWords
 {
+	
+
     // a constant array that holds all valid command words
     private static final String validCommands[] = {
         "go", "quit", "help", "eat"
@@ -47,4 +52,6 @@ class CommandWords
         }
         System.out.println();
     }
+    
+   
 }
