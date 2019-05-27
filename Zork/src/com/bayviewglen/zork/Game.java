@@ -49,19 +49,20 @@ class Game {
 			itemScanner = new Scanner(new File(fileName));
 			while (itemScanner.hasNext()) {
 				KeyItem item = new KeyItem();
-				// Read the Name
+				// Read item Name
 				String itemName = itemScanner.nextLine();
 				item.setName(itemName.split(":")[1].trim());
-				// Read the Description
+				// Read item Description
 				String itemDescription = itemScanner.nextLine();
 				item.setDescription(itemDescription.split(":")[1].replaceAll("<br>", "\n").trim());
-				// Read the Weight
+				// Read item Weight
 				String itemWeight = itemScanner.nextLine();
 				item.setWeight(Integer.parseInt(itemWeight.split(": ")[1]));
 				// Read item Contents
 				String itemContents = itemScanner.nextLine();
 				item.setContents(itemContents.split(":")[1]);
 
+				// Puts item into master map of key items.
 				masterKeyItemMap.put(itemName.toUpperCase().substring(10).trim().replaceAll(" ", "_"), item);
 
 			}
@@ -91,6 +92,7 @@ class Game {
 				String itemPower = itemScanner.nextLine();
 				item.setPower(Integer.parseInt(itemPower.split(": ")[1]));
 
+				// Puts item into master map of utility items.
 				masterUtilityItemMap.put(itemName.toUpperCase().substring(10).trim().replaceAll(" ", "_"), item);
 
 			}
@@ -137,6 +139,7 @@ class Game {
 					}
 				}
 
+				// Puts enemy in master map
 				masterEnemyMap.put(enemyName.toUpperCase().substring(11).trim().replaceAll(" ", "_"), enemy);
 
 			}
@@ -216,7 +219,8 @@ class Game {
 	}
 
 	/**
-	 * Create the game and initialise its internal map.
+	 * Create the game and initialise its internal map, utility items, key items and
+	 * enemies. Also used to set starting room
 	 */
 	public Game() {
 		try {
@@ -287,7 +291,7 @@ class Game {
 		return false;
 	}
 
-// implementations of user commands:
+	// implementations of user commands:
 	/**
 	 * Print out some help information. Here we print some stupid, cryptic message
 	 * and a list of the command words.
@@ -340,11 +344,12 @@ class Game {
 					+ enemy.getName() + ", killing them instantly.");
 			enemy.setHealth(0);
 		} else {
-			System.out.println("Using your mighty " + weapon.getName() + ", you mess up " + enemy.getName() + "a little.");
+			System.out.println(
+					"Using your mighty " + weapon.getName() + ", you mess up " + enemy.getName() + "a little.");
 			enemy.setHealth(enemy.getHealth() - weapon.getPower());
 		}
 
-		if(enemy.getHealth() > 0) {
+		if (enemy.getHealth() > 0) {
 			System.out.println(enemy.getName() + "Hits back. Maybe another hit'll do it?");
 		}
 	}

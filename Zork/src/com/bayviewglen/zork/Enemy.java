@@ -1,5 +1,11 @@
 package com.bayviewglen.zork;
 
+/**
+ * Class Enemy - an enemy which the user comes across during the adventure;
+ * 
+ * @author rpurcaru
+ *
+ */
 class Enemy{
 	private int health;
 	private int damagePerHit;
@@ -22,6 +28,10 @@ class Enemy{
 		dialogueThree = "DEFAULT_DIALOGUE";
 	}
 	
+	/**
+	 * 
+	 * @return one of three randomly selected dialogue options.
+	 */
 	public String dialogue() {
 		int n = (int) (Math.random() * 3);
 		

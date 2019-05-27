@@ -1,5 +1,13 @@
 package com.bayviewglen.zork;
 
+/**
+ * Class UtilityItems - an extension of the items class that holds items which
+ * the user can use to interact with other elements of the game.
+ * 
+ * @author rpurcaru
+ *
+ */
+
 class UtilityItem extends Items{
 	public int power;
 	
