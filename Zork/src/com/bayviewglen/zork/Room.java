@@ -125,4 +125,7 @@ class Room
     public void setDescription(String description) {
 		this.description = description;
 	}
+    public boolean containsEnemy() {
+    	return (!(roomEnemy == null));
+    }
 }
