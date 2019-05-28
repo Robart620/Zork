@@ -127,7 +127,6 @@ class Game {
 				enemy.setDialogueTwo(dialogue[1].trim());
 				enemy.setDialogueThree(dialogue[2].trim());
 				// Read Death Item Name
-
 				String item = enemyScanner.nextLine().trim();
 				if (item.length() > 6) {
 					String[] items = item.split(": ")[1].split(",");

@@ -4,19 +4,25 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Combat {
-
+	
+	private Parser parser;
 	public static boolean isInCombat = false;
 	public static Enemy enemy;
 	public static HashMap<String, Items> inventory;
-	public int playerHealthChange;
+	public int playerHealth;
 	
-	public Combat(Enemy enemy, HashMap inventory) {
+	public Combat(Enemy enemy, HashMap inventory, int health) {
 		this.enemy = enemy;
 		this.inventory = inventory;
+		this.playerHealth = health;
+		parser = new Parser();
 	}
 	
 	public void doCombat() {
-		//TODO implement player combat using inputs from parser and commands.
+		while(playerHealth > 0 && enemy.getHealth() > 0) {
+			Command command = parser.getCommand();
+			
+		}
 	}
 	
 	/**
@@ -32,7 +38,7 @@ public class Combat {
 			return;
 		} else if (randomValue(10) == 1) {
 			System.out.println("In your haste to attack your foe, you hurt yourself... Moron");
-			playerHealthChange -= 5;
+			playerHealth -= 5;
 		} else if (randomValue(10) == 1) {
 			System.out.println("With a sudden burst of strength, your " + weapon.getName() + " critically damages "
 					+ enemy.getName() + ", killing them instantly.");
