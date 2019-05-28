@@ -41,7 +41,7 @@ class Parser {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		System.out.println(map);
+		//System.out.println(map);
 		return map;
 
 	}
@@ -92,14 +92,14 @@ class Parser {
 
 		for (int i = 0; i < givenWords.size(); i++) {
 			for (int j = 0; j < keys.length; j++) {
-				if (is(keys[j], givenWords.get(i), synonymsMap))
+				if (isSynonym(keys[j], givenWords.get(i), synonymsMap))
 					givenWords.set(i, keys[j]);
 
 			}
 		}
 
 		System.out.println(givenWords);
-		System.out.println(synonymsMap.keySet());
+		//System.out.println(synonymsMap.keySet());
 
 //		
 		if (tokenizer.hasMoreTokens())
@@ -166,7 +166,7 @@ class Parser {
 		return keys;
 	}
 
-	public static boolean is(String commandGroup, String command, HashMap<String, String[]> map) {
+	public static boolean isSynonym(String commandGroup, String command, HashMap<String, String[]> map) {
 		for (String s : map.get(commandGroup)) {
 			if (s.equals(command)) {
 				return true;
