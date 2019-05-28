@@ -17,15 +17,34 @@ package com.bayviewglen.zork;
  * returns a command object that is marked as an unknown command.
  */
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 class Parser {
 
 	private static final String[] nonImportantWords = { "a", "to", "the", "over", "at", "it" };
-
 	private CommandWords commands; // holds all valid command words
+
+	public HashMap<String, String[]> readSynonyms(HashMap<String, String[]> map, String fileName) {
+		try {
+			Scanner synScan = new Scanner(new File(fileName));
+			while (synScan.hasNext()) {
+				String input = synScan.nextLine();
+				map.put(input.split(":")[0].trim(), input.split(":")[1].split(", "));
+			}
+			synScan.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		System.out.println(map);
+		return map;
+
+	}
 
 	public Parser() {
 		commands = new CommandWords();
@@ -38,7 +57,13 @@ class Parser {
 		String direction;
 		String item;
 		String enemy;
+		HashMap<String, String[]> synonymsMap = new HashMap<String, String[]>();
 		ArrayList<String> givenWords = new ArrayList<String>();
+
+		synonymsMap = readSynonyms(synonymsMap, "data/Synonyms.dat");
+		String[] keys;
+
+		keys = getKeys(synonymsMap);
 
 		System.out.print("> "); // print prompt
 		BufferedReader reader =
@@ -61,29 +86,45 @@ class Parser {
 		}
 		givenWords = reducedInput(givenWords);
 
-        if(tokenizer.hasMoreTokens())
-            commandWord = tokenizer.nextToken();      // get first word
-        else
-            commandWord = null;
-        if(tokenizer.hasMoreTokens())
-            direction = tokenizer.nextToken();      // get second word
-        else
-            direction = null;
-        if(tokenizer.hasMoreTokens())
-            item = tokenizer.nextToken();
-        else
-            item = null;
-        if(tokenizer.hasMoreTokens())
-            enemy = tokenizer.nextToken();
-        else
-            enemy = null;
-        // note: we just ignore the rest of the input line.
-        // Now check whether this word is known. If so, create a command
-        	// with it. If not, create a "nil" command (for unknown command).
-        if(commands.isCommand(commandWord))
-            return new Command(commandWord, direction, item, enemy);
-        else
-            return new Command(null, direction, item, enemy);
+		for (int i = 0; i < givenWords.size(); i++) {
+			givenWords.set(i, givenWords.get(i).toLowerCase());
+		}
+
+		for (int i = 0; i < givenWords.size(); i++) {
+			for (int j = 0; j < keys.length; j++) {
+				if (is(keys[j], givenWords.get(i), synonymsMap))
+					givenWords.set(i, keys[j]);
+
+			}
+		}
+
+		System.out.println(givenWords);
+		System.out.println(synonymsMap.keySet());
+
+//		
+		if (tokenizer.hasMoreTokens())
+			commandWord = tokenizer.nextToken(); // get first word
+		else
+			commandWord = null;
+		if (tokenizer.hasMoreTokens())
+			direction = tokenizer.nextToken(); // get second word
+		else
+			direction = null;
+		if (tokenizer.hasMoreTokens())
+			item = tokenizer.nextToken();
+		else
+			item = null;
+		if (tokenizer.hasMoreTokens())
+			enemy = tokenizer.nextToken();
+		else
+			enemy = null;
+		// note: we just ignore the rest of the input line.
+		// Now check whether this word is known. If so, create a command
+		// with it. If not, create a "nil" command (for unknown command).
+		if (commands.isCommand(commandWord))
+			return new Command(commandWord, direction, item, enemy);
+		else
+			return new Command(null, direction, item, enemy);
 	}
 
 	/**
@@ -112,4 +153,26 @@ class Parser {
 		return input;
 
 	}
+
+	public String[] getKeys(HashMap<String, String[]> map) {
+		String[] keys = new String[map.size()];
+
+		for (int i = 0; i < map.size(); i++) {
+			keys[i] = map.keySet().toString().split(",")[i].trim();
+		}
+		keys[0] = keys[0].substring(1);
+		keys[map.size() - 1] = keys[map.size() - 1].substring(0, keys[map.size() - 1].length() - 1);
+
+		return keys;
+	}
+
+	public static boolean is(String commandGroup, String command, HashMap<String, String[]> map) {
+		for (String s : map.get(commandGroup)) {
+			if (s.equals(command)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 }

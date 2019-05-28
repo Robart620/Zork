@@ -1,79 +1,23 @@
-proceed, go
-go, go
-move, go
-progress, go
-travel, go
-leave, go
-hightail, go
-journey, go
-proceed, go
-advance, go
-run, go
-walk, go
-jog, go
-exit, go
-quit, quit
-retire, quit
-help, help
-eat, eat
-chew, eat
-devour, eat
-dine, eat
-ingest, eat
-nibble, eat
-swallow, eat
-kill, kill
-execute, kill
-murder, kill
-slay, kill
-attack, attack
-assail, attack
-charge, attack
-strike, attack
-destroy, attack
-look, look
-consider, look
-glance, look
-admire, look
-see, look
-save, save
-restore, restore
-restart, restart
-climb, climb
-ascend, climb
-mount, climb
-scale, climb
-rise, climb
-clamber, climb
-yes, yes
-y, yes
-no, no
-n, no
-take, take
-grab, take
-seize, take
-collect, take
-drop, drop
-abandon, drop
-release, drop
-dump, drop
-Bellissimogre, Bellissimogre
-Chap-Men, Chap-Men
-Anthrollny, Anthrollny
-north, north
-up, north
-n, north
-northward, north
-south, south
-down, south
-s, south
-southward, south
-east, east
-right, east
-e, east
-eastward, east
-west, west
-left, west
-w, west
-westward, west
+go: go, proceed, head, travel, move, progress, travel, hightail, journey, advance, run, walk, jog, exit
+quit: quit, retire
+eat: eat, consume, chew, devour, dine, ingest, nibble, swallow
+help: help
+kill: kill, execute, murder, slay
+attack: attack, assail, charge, strike, destroy
+look: look, consider, glance, admire, see
+save: save
+restore: restore
+restart: restart
+climb: climb, ascend, mount, scale, rise, clamber
+yes: yes
+no: no
+take: take, grab, seize, collect
+drop: drop, abandon, release, dump
+Bellissimogre: Bellissimogre
+Chap-Men: Chap-Men
+Anthrollny: Anthrollny
+north: north, up, n, northward
+south: south, down, s, southward
+east: east, right, e, eastward
+west: west, left, w, westward
 
