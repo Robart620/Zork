@@ -1,4 +1,4 @@
-   
+
 package com.bayviewglen.zork;
 
 /**
@@ -54,7 +54,17 @@ class Command {
 	public String getEnemy() {
 		return enemy;
 	}
-	// 
+	//
+
+	public String getFoodItem() {
+		return commandWord;
+
+	}
+
+	public boolean hasFoodItem() {
+		return !commandWord.equals(null);
+	}
+
 //	public String getFoodItem() {
 //		return commandWord;
 //		
@@ -81,20 +91,9 @@ class Command {
 	public boolean hasItemWord() {
 		return (item != null);
 	}
-	
+
 	public boolean hasEnemyWord() {
 		return (enemy != null);
 	}
 
-	public boolean hasFoodItem() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public String getFoodItem() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
-

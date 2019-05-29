@@ -69,7 +69,7 @@ Exit Rooms: S-Town Center, U-Your Room, D-Casino
 Items:
 Enemy:
 Room Name: Casino
-Room Description: A stone cold face stares you down. The name plate on the figure's left breast reads 'Card Master Kevin'.
+Room Description: A stone cold face stares you down. The name plate on the figure's left breast reads 'Kard Master Kevin'.
 Exit Rooms: U-Inn Lobby
 Items:
 Enemy:
@@ -209,7 +209,7 @@ Exit Rooms: W-Storage Room, S-Boss Room
 Items:
 Enemy:
 Room Name: Boss Room
-Room Description: Card Master Kevin?!?!
+Room Description: Kard Master Kevin?!?!
 Exit Rooms: N-Storage Room
 Items:
 Enemy:
