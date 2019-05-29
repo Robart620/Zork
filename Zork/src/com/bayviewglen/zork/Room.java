@@ -14,16 +14,16 @@ package com.bayviewglen.zork;
  * to the neighbouring room, or null if there is no exit in that direction.
  */
 import java.util.Set;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 class Room 
 {
 	private String roomName;
     private String description;
     private HashMap<String, Room> exits;        // stores exits of this room.
-    public ArrayList<Items> itemsList;
+    public List<Items> itemsList = new ArrayList<Items>();
     public Enemy roomEnemy;
 /**
      * Create a room described "description". Initially, it has no exits.
