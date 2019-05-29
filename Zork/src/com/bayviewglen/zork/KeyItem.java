@@ -25,7 +25,7 @@ class KeyItem extends Items {
 		this.weight = weight;
 	}
 
-	public String readContents() {
+	public String getContents() {
 		return contents;
 	}
 

@@ -320,11 +320,18 @@ class Game {
 		}
 		String foodItem = command.getFoodItem();
 		// Try to leave current room.
-		for(Items i : inventory) {
-			if(i instanceof UtilityItem);
-				
+		for (Items i : inventory) {
+			if (i instanceof UtilityItem && foodItem.equals(i.getName())) {
+				try {
+					KeyItem item = (KeyItem) i;
+					playerHealth += Integer.parseInt(item.getContents());
+				} catch (Exception e){
+					System.out.println("You can't eat " + i.getName());
+				}
+
 			}
 		}
+	}
 
 	// implementations of user commands:
 	/**
