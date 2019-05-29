@@ -1,4 +1,4 @@
-go: go, proceed, head, travel, move, progress, travel, hightail, journey, advance, run, walk, jog, exit, traverse
+go: go, proceed, head, travel, move, progress, travel, hightail, journey, advance, run, walk, jog, exit, traverse, crawl
 play: play
 quit: quit, retire
 eat: eat, consume, chew, devour, dine, ingest, nibble, swallow
@@ -10,8 +10,8 @@ save: save
 restore: restore
 restart: restart
 climb: climb, ascend, mount, scale, rise, clamber
-yes: yes
-no: no
+yes: yes, affirmative
+no: no, 
 jump: jump
 inventory: inventory, i
 take: take, grab, seize, collect, pick

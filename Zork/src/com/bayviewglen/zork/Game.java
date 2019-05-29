@@ -301,8 +301,7 @@ class Game {
 							currentRoom.itemsList.remove(i);
 							inventory.add(i);
 							System.out.println("you pick up the " + i.getName());
-						}
-						else {
+						} else {
 							System.out.println("The " + i.getName() + " is too heavy... weakling");
 						}
 					} else
@@ -313,6 +312,24 @@ class Game {
 				System.out.println("What do you want to take?");
 
 		} else if (commandWord.equals("jump")) {
+			if (currentRoom.getRoomName().equals("Abyss")) {
+				System.out.println("You Die, I mean what did you expect would happen, dimwit");
+				return true;
+			}
+			if (currentRoom.getRoomName().equals("Cliff Face")) {
+				System.out.println("Ok? human vs ground, who wins? You dead, fool");
+				return true;
+			}
+			if (currentRoom.getRoomName().equals("Top of Cliff")) {
+				System.out.println("What, was the cliff face not high enough for you? \n"
+						+ " you jump off the top of the cliff, and expierence about five seconds \n"
+						+ " of pure joy where you are laughing your heart out before you come crashing "
+						+ "\nto the ground and the realization of the studidity of your \n"
+						+ "choice dawns on as you become little more than a human sized bug on the windshield, moron");
+				return true;
+			}
+			else
+				System.out.println("You jump for joy, dreaming of flight, a nearby bird stops and qustions your sanity before moving on again");
 
 		}
 
@@ -339,9 +356,8 @@ class Game {
 				System.out.println("Quit what?");
 			else
 				return true; // signal that we want to quit
-		} else if (commandWord.equals("eat")) {
-			System.out.println("Do you really think you should be eating at a time like this?");
 		}
+		
 		return false;
 	}
 
