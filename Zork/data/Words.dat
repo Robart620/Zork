@@ -1,4 +1,4 @@
 verb:go, quit, help, eat, kill, attack, look, save, restore, restart, climb, play, yes, no, take, use 
 enemy:bellissimogre, chap-Men, anthrollny
-direction:north, south, east, west
-item: sword, hammond's hammer, bone-and-marrow, magic deck, conductors club, anthony's teeth, surface pen, cool looking rock, 
+direction:north, south, east, west, down, up
+item: sword, hammond's, bone-and-marrow, magic, conductors, anthony's, surface, cool, 
