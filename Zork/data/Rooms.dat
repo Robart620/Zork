@@ -1,17 +1,17 @@
 Room Name: Grassy Knoll
 Room Description: You stand in a forest clearing upon a sheet of fresh set grass. 
 Exit Rooms: S-Abyss, N-Tall Tree
-Items:
+Items: Shoddy Leaf Hat
 Enemy:
 Room Name: Abyss 
 Room Description: You peer over what seems like a never ending depth infront of your toes. The idea of throwing yourself in crosses your mind.
 Exit Rooms: N-Grassy Knoll
-Items:
+Items: Copper Shortsword
 Enemy:
 Room Name: Tall Tree
 Room Description: You stand at the foot of a tall tree. It seems like it may have been climbable not too long ago, but it is far too frail now.
 Exits: S-Grassy Knoll, N-Town Entrance, E-Grassy Knoll, W-Grassy Knoll
-Items:
+Items: Apple
 Enemy:
 Room Name: Town Entrance
 Room Description: Before you stands the Mountain town of Helixia. A sign damaged sign on the ground infront of you reads "Welcome to Helixia!".
@@ -21,17 +21,17 @@ Enemy:
 Room Name: Town Square
 Room Description: You stand in what would be the commercial district of a larger town. Flanked on either of your two sides you see what seem to be the only two shops in town.
 Exit Rooms: S-Town Entrance, W-Blacksmith, E-Supply Depot, N-Town Road.
-Items:
+Items: Cool Looking Rock
 Enemy:
 Room Name: Blacksmith
 Room Description: A blacksmith stands infront of you. "Welcome O'Unadorned traveller. Get thee assorted arms and armour for thy travels." He smells like overripe bananas and wine.
 Exit Rooms: E-Town Square
-Items:
+Items: Sword, Hammond's Hammer
 Enemy:
 Room Name: Supply Depot
 Room Description: A supply store manned by a solitary gentleman without much to say.
 Exit Rooms: W-Town Square 
-Items:
+Items: Old Provisions, Vegan Pork-Chop
 Enemy:
 Room Name: Town Road
 Room Description: As you proceed, you find yourself at the end the broken road that leads into town. To the east: the Town Center, to the south: the town square, and to the west: a mysterious builind upon which the words 'Haus' are written. 
@@ -41,7 +41,7 @@ Enemy:
 Room Name: Haus
 Room Description: As you approach the house, a deep feeling of despair falls upon you. The reminder of what once was stops you in your tracks and prevents you from proceeding.
 Exit Rooms: W-Town Road, N-Despair, E-Despair, S-Despair, U-Despair, D-Despair
-Items:
+Items: Singular baby carrot
 Enemy:
 Room Name: Despair
 Room Description: Uh.....Uh.....Ah.....Uh.....
@@ -51,7 +51,7 @@ Enemy:
 Room Name: Cellar
 Room Descpription: Your nose if filled with the foul stench of sweat and ogre meat. A passage, far too narrow for any grown man to traverse, leads down from the cellar.
 Exit Rooms: U-Town Road
-Items:
+Items: Warm Milk
 Enemy:
 Room Name: Town Center
 Room Description: You stand in what was clearly once a busy part of Helixia. Travelers from all over would can be presumed to have come from far and wide through this small town.
@@ -62,7 +62,7 @@ Room Name: Park
 Room Description: You stand in a park... relaxing isn't it?
 Exit Rooms: N-Town Center
 Items:
-Enemy:
+Enemy: Con-Brad
 Room Name: Inn Lobby
 Room Description: The warm smile of the lobby attendant greets you as you enter the main floor of the inn.
 Exit Rooms: S-Town Center, U-Your Room, D-Casino
@@ -142,7 +142,7 @@ Room Name: Opening
 Room Description: An everpresent rattling fills the stuffy air... The Chap-Men
 Exit Rooms: N-Foot of Bridge, E-Water Drop-Off
 Items:
-Enemy:
+Enemy: Chap-Men
 Room Name: Foot of Bridge
 Room Description: It's all in the title...
 Exit Rooms: E-Bridge, S-Opening
@@ -151,7 +151,7 @@ Enemy:
 Room Name: Bridge
 Room Description: A note is stapled to the flimsy rail, ceremonially preventing your most timely demise.
 Exit Rooms: W-Foot of Bride, E-Bridge Landing
-Items:
+Items: Theresa-tron's Note
 Enemy:
 Room Name: Bride Landing
 Room Description: Again... It's all in the title
@@ -191,7 +191,7 @@ Enemy:
 Room Name: Dead End
 Room Description: Damn... Maybe this end has a point?
 Exit Rooms: E-Maze 5
-Items:
+Items: Another Piece of Paper
 Enemy:
 Room Name: Maze 6
 Room Description: You're lost, eh?
@@ -201,7 +201,7 @@ Enemy:
 Room Name: Storage Room
 Room Description: A good place to store stuff... obviously.
 Exit Rooms: D-Maze 4, E-Screaming Hall
-Items:
+Items: Nerf Sword, Baseball Bat
 Enemy:
 Room Name: Screaming Halls
 Room Description: You cover your ears as the deafening pitch tears your soul to pieces bit by bit. What monstrosity could make this noi... is that Chiu?
@@ -209,7 +209,7 @@ Exit Rooms: W-Storage Room, S-Boss Room
 Items:
 Enemy:
 Room Name: Boss Room
-Room Description: Card Michael Kevin?!?!
+Room Description: Card Master Kevin?!?!
 Exit Rooms: N-Storage Room
 Items:
 Enemy:

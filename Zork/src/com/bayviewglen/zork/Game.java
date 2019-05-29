@@ -26,20 +26,15 @@ import java.util.Scanner;
 class Game {
 	private Parser parser;
 	private Room currentRoom;
-	// This is a MASTER object that contains all of the rooms and is easily
-	// accessible.
-	// The key will be the name of the room -> no spaces (Use all caps and
-	// underscore -> Great Room would have a key of GREAT_ROOM
-	// In a hashmap keys are case sensitive.
-	// masterRoomMap.get("GREAT_ROOM") will return the Room Object that is the Great
-	// Room (assuming you have one)
 	private HashMap<String, Room> masterRoomMap;
 	private HashMap<String, KeyItem> masterKeyItemMap;
 	private HashMap<String, UtilityItem> masterUtilityItemMap;
 	private HashMap<String, Enemy> masterEnemyMap;
 	public int inventoryWeight;
-	public HashMap<String, Items> items;
-	public int playerHealth = 100;
+	public List<Items> inventory;
+	private int playerHealth = 100;
+	private int gold = 500;
+	private Poker poker;
 
 	public final int MAX_INVENTORY_WEIGHT = 100;
 	private final String STARTING_ROOM = "GRASSY_KNOLL";
@@ -127,7 +122,6 @@ class Game {
 				enemy.setDialogueTwo(dialogue[1].trim());
 				enemy.setDialogueThree(dialogue[2].trim());
 				// Read Death Item Name
-
 				String item = enemyScanner.nextLine().trim();
 				if (item.length() > 6) {
 					String[] items = item.split(": ")[1].split(",");
@@ -242,17 +236,18 @@ class Game {
 	 */
 	public void play() {
 		printWelcome();
-// Enter the main command loop.  Here we repeatedly read commands and
+		// Enter the main command loop. Here we repeatedly read commands and
 		// execute them until the game is over.
-
 		boolean finished = false;
 		while (!finished && playerHealth > 0) {
 			Command command = parser.getCommand();
 			finished = processCommand(command);
+
 		}
-		if (playerHealth < 1)
+		if (playerHealth < 1) {
 			System.out.println("You died. Nice.");
-		else
+			System.out.println("Now would be a good time to reset the game and try again.");
+		} else
 			System.out.println("You Win. Thank you for playing.  Good bye.");
 	}
 
@@ -282,7 +277,30 @@ class Game {
 			printHelp();
 		else if (commandWord.equals("go"))
 			goRoom(command);
-		else if (commandWord.equals("quit")) {
+		else if (commandWord.equals("attack")) {
+			if (!currentRoom.containsEnemy())
+				System.out.println("There is no enemy to attack. Who's really the bad guy?");
+			else {
+				Combat fight = new Combat(currentRoom.getEnemy(), inventory, playerHealth);
+				playerHealth = fight.doCombat();
+			}
+		} else if (commandWord.equals("look")) {
+			System.out.println(currentRoom.longDescription());
+			if (currentRoom.containsEnemy())
+				System.out.println(currentRoom.getEnemy().getName() + " is looking at you. He clearly wants tussel.");
+			if (!currentRoom.itemsList.isEmpty()) {
+				System.out.println("The things around you are: ");
+				for (Items s : currentRoom.itemsList) {
+					System.out.print(s + ", ");
+				}
+			}
+		} else if (commandWord.equals("play")) {
+			if (currentRoom.getRoomName().equals("CASINO")) {
+				poker = new Poker(gold);
+				poker.play();
+			} else
+				System.out.println("This is not the time for play you child.");
+		} else if (commandWord.equals("quit")) {
 			if (command.hasDirectionWord())
 				System.out.println("Quit what?");
 			else

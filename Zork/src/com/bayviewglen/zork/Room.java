@@ -14,6 +14,7 @@ package com.bayviewglen.zork;
  * to the neighbouring room, or null if there is no exit in that direction.
  */
 import java.util.Set;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -128,4 +129,7 @@ class Room
     public boolean containsEnemy() {
     	return (!(roomEnemy == null));
     }
+	public Enemy getEnemy() {
+		return roomEnemy;
+	}
 }

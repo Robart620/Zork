@@ -3,13 +3,18 @@ Health: 100
 Damage Per Hit: 20
 Dialogue: I don't like your tone!, Lets up the beats per minute!, Lets up the beats per minute!
 Item: Conductors Club
-Name: Chap-Men
-Health: 100
-Damage Per Hit: 17
-Dialogue: *angry chattering*, *angry chattering*, *angry chattering*
-Item: Chap-Men's Bone-and-Marrow
 Name: Anthrollny
 Health: 100
 Damage Per Hit: 10
 Dialogue: That hit was a 4- at best!, And you call yourself a Geek! Pathetic., That hit was a 4- at best!
 Item: Surface Pen
+Name: Chap-Men
+Health: 100
+Damage Per Hit: 17
+Dialogue: *angry chattering*, *angry chattering*, *angry chattering*
+Item: Chap-Men's Bone-and-Marrow
+Name: Con-Brad
+Health: 100
+Damage Per Hit: 15
+Dialogue: That's Rawsome broksi!, Gnarly hit man!, That's like totally not kawai!
+Item: Buster Sword
