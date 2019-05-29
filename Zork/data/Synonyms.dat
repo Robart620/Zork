@@ -12,7 +12,7 @@ restart: restart
 climb: climb, ascend, mount, scale, rise, clamber
 yes: yes
 no: no
-take: take, grab, seize, collect
+take: take, grab, seize, collect, pick
 drop: drop, abandon, release, dump
 Bellissimogre: Bellissimogre
 Chap-Men: Chap-Men
