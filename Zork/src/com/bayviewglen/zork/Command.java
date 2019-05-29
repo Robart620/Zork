@@ -55,6 +55,7 @@ class Command {
 		return enemy;
 	}
 	// 
+<<<<<<< HEAD
 	public String getFoodItem() {
 		return commandWord;
 		
@@ -63,6 +64,12 @@ class Command {
 	public boolean hasFoodItem() {
 		return !commandWord.equals(null);
 	}
+=======
+//	public String getFoodItem() {
+//		return commandWord;
+//		
+//	}
+>>>>>>> branch 'master' of https://github.com/Robart620/Zork.git
 
 	/**
 	 * Return true if this command was not understood.
