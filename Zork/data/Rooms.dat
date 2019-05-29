@@ -20,7 +20,7 @@ Items:
 Enemy:
 Room Name: Town Square
 Room Description: You stand in what would be the commercial district of a larger town. Flanked on either of your two sides you see what seem to be the only two shops in town.
-Exit Rooms: S-Town Entrance, W-Blacksmith, E-Supply Depot, N-Town Road
+Exit Rooms: S-Town Entrance, W-Blacksmith, E-Supply Depot, N-Town Road.
 Items: Cool Looking Rock
 Enemy:
 Room Name: Blacksmith
@@ -69,7 +69,7 @@ Exit Rooms: S-Town Center, U-Your Room, D-Casino
 Items:
 Enemy:
 Room Name: Casino
-Room Description: A stone cold face stares you down. The name plate on the figure's left breast reads 'Card Master Kevin'.
+Room Description: A stone cold face stares you down. The name plate on the figure's left breast reads 'Kard Master Kevin'.
 Exit Rooms: U-Inn Lobby
 Items:
 Enemy:
@@ -209,7 +209,7 @@ Exit Rooms: W-Storage Room, S-Boss Room
 Items:
 Enemy:
 Room Name: Boss Room
-Room Description: Card Master Kevin?!?!
+Room Description: Kard Master Kevin?!?!
 Exit Rooms: N-Storage Room
 Items:
 Enemy:
