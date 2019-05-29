@@ -20,7 +20,7 @@ Items:
 Enemy:
 Room Name: Town Square
 Room Description: You stand in what would be the commercial district of a larger town. Flanked on either of your two sides you see what seem to be the only two shops in town.
-Exit Rooms: S-Town Entrance, W-Blacksmith, E-Supply Depot, N-Town Road.
+Exit Rooms: S-Town Entrance, W-Blacksmith, E-Supply Depot, N-Town Road
 Items: Cool Looking Rock
 Enemy:
 Room Name: Blacksmith

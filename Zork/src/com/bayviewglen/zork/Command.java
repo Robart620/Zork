@@ -59,6 +59,10 @@ class Command {
 		return commandWord;
 		
 	}
+	
+	public boolean hasFoodItem() {
+		return !commandWord.equals(null);
+	}
 
 	/**
 	 * Return true if this command was not understood.
@@ -84,17 +88,7 @@ class Command {
 	
 	public boolean hasEnemyWord() {
 		return (enemy != null);
-	}
-
-	public boolean hasFoodItem() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public String getFoodItem() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	}	
 
 }
 
