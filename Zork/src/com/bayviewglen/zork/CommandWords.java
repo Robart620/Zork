@@ -1,7 +1,5 @@
 package com.bayviewglen.zork;
 
-import java.util.ArrayList;
-
 /*
  * Author:  Michael Kolling.
  * Version: 1.0

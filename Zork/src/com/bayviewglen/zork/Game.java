@@ -2,7 +2,6 @@ package com.bayviewglen.zork;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
@@ -127,9 +126,9 @@ class Game {
 					String[] items = item.split(": ")[1].split(",");
 					for (String s : items) {
 						if (!(masterKeyItemMap.get(s.toUpperCase().trim().replaceAll(" ", "_")) == null))
-							enemy.setDeathItem(masterKeyItemMap.get(s));
+							enemy.setDeathItem(masterKeyItemMap.get(s.toUpperCase().trim().replaceAll(" ", "_")));
 						else if (!(masterUtilityItemMap.get(s.toUpperCase().trim().replaceAll(" ", "_")) == null))
-							enemy.setDeathItem(masterUtilityItemMap.get(s));
+							enemy.setDeathItem(masterUtilityItemMap.get(s.toUpperCase().trim().replaceAll(" ", "_")));
 						else
 							System.out.println("Enemy Item \"" + s + "\" was not found");
 					}
@@ -172,11 +171,12 @@ class Game {
 
 				String items = roomScanner.nextLine().trim();
 				if (items.length() > 6) {
-					String[] itemsInRoom = items.split(":")[1].split(",");
+					String[] itemsInRoom = items.split(": ")[1].split(",");
 					for (String s : itemsInRoom) {
-						if (!(masterKeyItemMap.get(s) == null))
+						s = s.toUpperCase().trim().replaceAll(" ", "_");
+						if (masterKeyItemMap.get(s) != null)
 							room.itemsList.add(masterKeyItemMap.get(s));
-						else if (!(masterKeyItemMap.get(s) == null))
+						else if (masterUtilityItemMap.get(s) != null)
 							room.itemsList.add(masterUtilityItemMap.get(s));
 						else
 							System.out.println("Room Item \"" + s + "\" was not found");
@@ -247,8 +247,15 @@ class Game {
 		if (playerHealth < 1) {
 			System.out.println("You died. Nice.");
 			System.out.println("Now would be a good time to reset the game and try again.");
-		} else
-			System.out.println("You Win. Thank you for playing.  Good bye.");
+		} else {
+			System.out.println("Congradulations!");
+			System.out.println("You defeated the evil Card Master Keving.");
+			System.out.println("No longer can he sling bad grades at Bill!");
+			System.out.println("Everybody's average is saved");
+			System.out.println("Huzzah");
+			System.out.println();
+			System.out.println("Goodbye");
+		}
 	}
 
 	/**
@@ -325,7 +332,7 @@ class Game {
 				try {
 					KeyItem item = (KeyItem) i;
 					playerHealth += Integer.parseInt(item.getContents());
-				} catch (Exception e){
+				} catch (Exception e) {
 					System.out.println("You can't eat " + i.getName());
 				}
 

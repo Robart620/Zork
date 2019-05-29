@@ -1,6 +1,5 @@
 package com.bayviewglen.zork;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class Combat {
