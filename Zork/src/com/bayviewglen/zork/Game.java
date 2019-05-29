@@ -296,9 +296,9 @@ class Game {
 			if (currentRoom.containsEnemy())
 				System.out.println(currentRoom.getEnemy().getName() + " is looking at you. He clearly wants tussel.");
 			if (!currentRoom.itemsList.isEmpty()) {
-				System.out.println("The things around you are: ");
+				System.out.print("The things around you are: ");
 				for (Items s : currentRoom.itemsList) {
-					System.out.print(s + ", ");
+					System.out.print(s.getName());
 				}
 			}
 		} else if (commandWord.equals("play")) {
