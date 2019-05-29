@@ -300,6 +300,8 @@ class Game {
 				poker.play();
 			} else
 				System.out.println("This is not the time for play you child.");
+		} else if (commandWord.equals("eat")) {
+			eat(command);
 		} else if (commandWord.equals("quit")) {
 			if (command.hasDirectionWord())
 				System.out.println("Quit what?");
@@ -310,6 +312,23 @@ class Game {
 		}
 		return false;
 	}
+
+	private void eat(Command command) {
+		if (!command.hasFoodItem()) {
+			System.out.println("What're you trynna eat, home boy?");
+			return;
+		}
+		String foodItem = command.getFoodItem();
+		// Try to leave current room.
+		for(Items i : inventory) {
+			
+				//try {
+					
+				//} catch{
+					//TODO
+				//}
+			}
+		}
 
 	// implementations of user commands:
 	/**
