@@ -1,3 +1,4 @@
 verb:go, quit, help, eat, kill, attack, look, save, restore, restart, climb, yes, no, take, use 
 enemy:bellissimogre, chap-Men, anthrollny
 direction:north, south, east, west
+item: 
