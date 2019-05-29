@@ -151,7 +151,7 @@ Enemy:
 Room Name: Bridge
 Room Description: A note is stapled to the flimsy rail, ceremonially preventing your most timely demise.
 Exit Rooms: W-Foot of Bride, E-Bridge Landing
-Items:
+Items: Theresa-tron's Note
 Enemy:
 Room Name: Bride Landing
 Room Description: Again... It's all in the title
