@@ -302,7 +302,7 @@ class Game {
 				}
 			}
 		} else if (commandWord.equals("play")) {
-			if (currentRoom.getRoomName().equals("CASINO")) {
+			if (currentRoom.getRoomName().equals("Casino")) {
 				poker = new Poker(gold);
 				poker.play();
 			} else

@@ -20,7 +20,7 @@ Items:
 Enemy:
 Room Name: Town Square
 Room Description: You stand in what would be the commercial district of a larger town. Flanked on either of your two sides you see what seem to be the only two shops in town.
-Exit Rooms: S-Town Entrance, W-Blacksmith, E-Supply Depot, N-Town Road.
+Exit Rooms: S-Town Entrance, W-Blacksmith, E-Supply Depot, N-Town Road
 Items: Cool Looking Rock
 Enemy:
 Room Name: Blacksmith
@@ -55,7 +55,7 @@ Items: Warm Milk
 Enemy:
 Room Name: Town Center
 Room Description: You stand in what was clearly once a busy part of Helixia. Travelers from all over would can be presumed to have come from far and wide through this small town.
-Exit Rooms: N-Inn Lobby, S-Park, E-Main Path
+Exit Rooms: N-Inn Lobby, S-Park, E-Main Path, W-Town Road
 Items:
 Enemy:
 Room Name: Park
