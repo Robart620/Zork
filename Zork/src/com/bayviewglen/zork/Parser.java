@@ -41,7 +41,7 @@ class Parser {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		//System.out.println(map);
+		// System.out.println(map);
 		return map;
 
 	}
@@ -99,7 +99,7 @@ class Parser {
 		}
 
 		System.out.println(givenWords);
-		//System.out.println(synonymsMap.keySet());
+		// System.out.println(synonymsMap.keySet());
 
 //		
 		if (tokenizer.hasMoreTokens())
