@@ -80,4 +80,14 @@ class Command {
 		return (enemy != null);
 	}
 
+	public boolean hasFoodItem() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public String getFoodItem() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
