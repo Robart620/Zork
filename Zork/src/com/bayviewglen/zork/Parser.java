@@ -30,22 +30,6 @@ class Parser {
 	private static final String[] nonImportantWords = { "a", "to", "the", "over", "at", "it" };
 	private CommandWords commands; // holds all valid command words
 
-	public HashMap<String, String[]> readSynonyms(HashMap<String, String[]> map, String fileName) {
-		try {
-			Scanner synScan = new Scanner(new File(fileName));
-			while (synScan.hasNext()) {
-				String input = synScan.nextLine();
-				map.put(input.split(":")[0].trim(), input.split(":")[1].split(", "));
-			}
-			synScan.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		// System.out.println(map);
-		return map;
-
-	}
-
 	public Parser() {
 		commands = new CommandWords();
 	}
@@ -59,6 +43,10 @@ class Parser {
 		String enemy;
 		HashMap<String, String[]> synonymsMap = new HashMap<String, String[]>();
 		ArrayList<String> givenWords = new ArrayList<String>();
+		boolean hasVerb = false;
+		boolean hasDirection = false;
+		boolean hasEnemy = false;
+		boolean hasItem = false;
 
 		synonymsMap = readSynonyms(synonymsMap, "data/Synonyms.dat");
 		String[] keys;
@@ -97,38 +85,66 @@ class Parser {
 
 			}
 		}
-
 		System.out.println(givenWords);
-		// System.out.println(synonymsMap.keySet());
+		// showCommands();
 
-		Command command = new Command(givenWords);
+		ArrayList<String> finalWords = new ArrayList<String>();
+
+		for (int i = 0; i < givenWords.size(); i++) {
+			if (CommandWords.isCommand(givenWords.get(i))) {
+				finalWords.add(givenWords.get(i));
+				hasVerb = true;
+				i = givenWords.size();
+			}		
+		}
+		if (!hasVerb)
+			finalWords.add(null);
 		
-		return command;
+		for (int i = 0; i < givenWords.size(); i++) {
+			if (CommandWords.isDirection(givenWords.get(i))) {
+				finalWords.add(givenWords.get(i));
+				hasDirection = true;
+				i = givenWords.size();
+			}		
+		}
+		if (!hasDirection)
+			finalWords.add(null);
 		
-//		
-//		if (tokenizer.hasMoreTokens())
-//			commandWord = tokenizer.nextToken(); // get first word
-//		else
-//			commandWord = null;
-//		if (tokenizer.hasMoreTokens())
-//			direction = tokenizer.nextToken(); // get second word
-//		else
-//			direction = null;
-//		if (tokenizer.hasMoreTokens())
-//			item = tokenizer.nextToken();
-//		else
-//			item = null;
-//		if (tokenizer.hasMoreTokens())
-//			enemy = tokenizer.nextToken();
-//		else
-//			enemy = null;
-//		// note: we just ignore the rest of the input line.
-//		// Now check whether this word is known. If so, create a command
-//		// with it. If not, create a "nil" command (for unknown command).
-//		if (commands.isCommand(givenWords))
-//			return new Command(commandWord, direction, item, enemy);
-//		else
-//			return new Command(null, direction, item, enemy);
+		for (int i = 0; i < givenWords.size(); i++) {
+			if (CommandWords.isEnemy(givenWords.get(i))) {
+				finalWords.add(givenWords.get(i));
+				hasEnemy = true;
+				i = givenWords.size();
+			}		
+		}
+		if (!hasEnemy)
+			finalWords.add(null);
+		
+		for (int i = 0; i < givenWords.size(); i++) {
+			if (CommandWords.isItem(givenWords.get(i))) {
+				finalWords.add(givenWords.get(i));
+				hasItem = true;
+				i = givenWords.size();
+			}		
+		}
+		if (!hasItem)
+			finalWords.add(null);
+		
+		System.out.println(finalWords);
+
+		
+		commandWord = finalWords.get(0);
+		direction = finalWords.get(1);
+		enemy = finalWords.get(2);
+		item = finalWords.get(3);
+
+	
+		// note: we just ignore the rest of the input line.
+		// Now check whether this word is known. If so, create a command
+		// with it. If not, create a "nil" command (for unknown command)
+		
+			return new Command(commandWord, direction, item, enemy);
+		
 	}
 
 	/**
@@ -155,6 +171,22 @@ class Parser {
 			}
 		}
 		return input;
+
+	}
+
+	public HashMap<String, String[]> readSynonyms(HashMap<String, String[]> map, String fileName) {
+		try {
+			Scanner synScan = new Scanner(new File(fileName));
+			while (synScan.hasNext()) {
+				String input = synScan.nextLine();
+				map.put(input.split(":")[0].trim(), input.split(":")[1].split(", "));
+			}
+			synScan.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		// System.out.println(map);
+		return map;
 
 	}
 

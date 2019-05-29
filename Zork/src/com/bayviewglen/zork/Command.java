@@ -1,3 +1,4 @@
+   
 package com.bayviewglen.zork;
 
 /**
@@ -53,6 +54,11 @@ class Command {
 	public String getEnemy() {
 		return enemy;
 	}
+	// 
+	public String getFoodItem() {
+		return commandWord;
+		
+	}
 
 	/**
 	 * Return true if this command was not understood.
@@ -81,3 +87,4 @@ class Command {
 	}
 
 }
+
