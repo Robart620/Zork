@@ -13,6 +13,7 @@ climb: climb, ascend, mount, scale, rise, clamber
 yes: yes
 no: no
 jump: jump
+inventory: inventory, i
 take: take, grab, seize, collect, pick
 drop: drop, abandon, release, dump
 Bellissimogre: Bellissimogre

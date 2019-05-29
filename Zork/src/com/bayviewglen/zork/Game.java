@@ -29,7 +29,7 @@ class Game {
 	private HashMap<String, KeyItem> masterKeyItemMap;
 	private HashMap<String, UtilityItem> masterUtilityItemMap;
 	private HashMap<String, Enemy> masterEnemyMap;
-	public int inventoryWeight;
+	public int inventoryWeight = 10;
 	public List<Items> inventory;
 	private int playerHealth = 100;
 	private int gold = 500;
@@ -291,12 +291,31 @@ class Game {
 				Combat fight = new Combat(currentRoom.getEnemy(), inventory, playerHealth);
 				playerHealth = fight.doCombat();
 			}
-		} else if(commandWord.equals("take")) {
-			
-		}else if (commandWord.equals("jump")) {
-			
+		} else if (commandWord.equals("take")) {
+			if (currentRoom.itemsList.isEmpty())
+				System.out.println("Use your eyes moron, ain't nothing here!");
+			else if (command.hasItemWord())
+				for (Items i : currentRoom.itemsList) {
+					if (command.getItem().equals((i.getName().toLowerCase()))) {
+						if (inventoryWeight + i.getWeight() > MAX_INVENTORY_WEIGHT) {
+							currentRoom.itemsList.remove(i);
+							inventory.add(i);
+							System.out.println("you pick up the " + i.getName());
+						}
+						else {
+							System.out.println("The " + i.getName() + " is too heavy... weakling");
+						}
+					} else
+						System.out.println("That item is not here.");
+
+				}
+			else
+				System.out.println("What do you want to take?");
+
+		} else if (commandWord.equals("jump")) {
+
 		}
-			
+
 		else if (commandWord.equals("look")) {
 			System.out.println(currentRoom.longDescription());
 			if (currentRoom.containsEnemy())
@@ -304,7 +323,7 @@ class Game {
 			if (!currentRoom.itemsList.isEmpty()) {
 				System.out.print("The things around you are: ");
 				for (Items s : currentRoom.itemsList) {
-					System.out.print(s.getName());
+					System.out.println(s.getName());
 				}
 			}
 		} else if (commandWord.equals("play")) {
