@@ -259,7 +259,7 @@ class Game {
 	}
 
 	/**
-	 * Print out the opening message for the player.
+	 * Print out the opening message for the player and read room description.
 	 */
 	private void printWelcome() {
 		System.out.println();
