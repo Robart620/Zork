@@ -125,9 +125,9 @@ class Game {
 				if (item.length() > 6) {
 					String[] items = item.split(": ")[1].split(",");
 					for (String s : items) {
-						if (!(masterKeyItemMap.get(s.toUpperCase().trim().replaceAll(" ", "_")) == null))
+						if (masterKeyItemMap.get(s.toUpperCase().trim().replaceAll(" ", "_")) != null)
 							enemy.setDeathItem(masterKeyItemMap.get(s.toUpperCase().trim().replaceAll(" ", "_")));
-						else if (!(masterUtilityItemMap.get(s.toUpperCase().trim().replaceAll(" ", "_")) == null))
+						else if (masterUtilityItemMap.get(s.toUpperCase().trim().replaceAll(" ", "_")) != null)
 							enemy.setDeathItem(masterUtilityItemMap.get(s.toUpperCase().trim().replaceAll(" ", "_")));
 						else
 							System.out.println("Enemy Item \"" + s + "\" was not found");
