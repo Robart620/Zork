@@ -12,36 +12,41 @@ public class Poker {
 	 * requires the user to not fold.
 	 */
 
-	public static final int jackValue = 11;
-	public static final int queenValue = 12;
-	public static final int kingValue = 13;
-	public static final int aceValue = 14;
+	private static final int jackValue = 11;
+	private static final int queenValue = 12;
+	private static final int kingValue = 13;
+	private static final int aceValue = 14;
 
-	public static final int NUM_SUITS = 4;
-	public static final int NUM_FACES = 13;
-	public static final int MIN_BET = 50;
-	public static final int MAX_BET = 100;
+	private static final int NUM_SUITS = 4;
+	private static final int NUM_FACES = 13;
+	private static final int MIN_BET = 50;
+	private static final int MAX_BET = 100;
 
-	public static final int STRAIGHT_FLUSH_PAIR = 40;
-	public static final int THREE_OF_A_KIND_PAIR = 30;
-	public static final int STRAIGHT_PAIR = 6;
-	public static final int FLUSH_PAIR = 3;
-	public static final int PAIR_PAIR = 1;
-	public static final int HIGH_CARD_PAIR = 0;
+	private static final int STRAIGHT_FLUSH_PAIR = 40;
+	private static final int THREE_OF_A_KIND_PAIR = 30;
+	private static final int STRAIGHT_PAIR = 6;
+	private static final int FLUSH_PAIR = 3;
+	private static final int PAIR_PAIR = 1;
+	private static final int HIGH_CARD_PAIR = 0;
 
-	public static final int STRAIGHT_FLUSH = 500;
-	public static final int THREE_OF_A_KIND = 400;
-	public static final int STRAIGHT = 300;
-	public static final int FLUSH = 200;
-	public static final int PAIR = 100;
-	public static final int HIGH_CARD = 0;
+	private static final int STRAIGHT_FLUSH = 500;
+	private static final int THREE_OF_A_KIND = 400;
+	private static final int STRAIGHT = 300;
+	private static final int FLUSH = 200;
+	private static final int PAIR = 100;
+	private static final int HIGH_CARD = 0;
+	
+	private static int playerWallet;
+	private static int anteWager = 0;
+	private static int pairPlusWager = 0;
+	private static int playWager = 0;
+	
+	public Poker (int playerGold) {
+		playerWallet = playerGold;
+	}
+	
+	public int play() {
 
-	public static void main(String[] args) {
-
-		int playerWallet = 500;
-		int anteWager = 0;
-		int pairPlusWager = 0;
-		int playWager = 0;
 		int playerHandValue;
 		int dealerHandValue;
 		String playerHand = "";
@@ -156,7 +161,7 @@ public class Poker {
 				 */
 				if (pairPlusWinnings > HIGH_CARD_PAIR) {
 					playerWallet += pairPlusWinnings;
-					System.out.println("+ $" + pairPlusWinnings + " from your pair plus wager!!! GOSH DARN IT");
+					System.out.println("+ $" + pairPlusWinnings + " from your pair plus wager!!!");
 				} else
 					playerWallet -= pairPlusWager;
 
@@ -172,11 +177,13 @@ public class Poker {
 		System.out.println(
 				"\nThanks for playing! \n\nHope you know when hold 'em, \nknow when to fold 'em, \nknow when to walk away, \nknow when to run.");
 
-		in.close();
+		
+		
+		return playerWallet;
 
 	}
 
-	public static int getBestCard(String hand) {
+	private static int getBestCard(String hand) {
 		/*
 		 * This method receives a hand of cards, separates it with the getCardFromHand()
 		 * method, and returns the value that's the highest
@@ -197,7 +204,7 @@ public class Poker {
 			return card3Value;
 	}
 
-	public static boolean isDealerValid(String dealerHand) {
+	private static boolean isDealerValid(String dealerHand) {
 		/*
 		 * This method uses the dealerHand string, along with the handType() method to
 		 * determine whether or not the dealer's hand is jack-high or greater.
@@ -209,7 +216,7 @@ public class Poker {
 			return true;
 	}
 
-	public static boolean isGonnaPlay(Scanner in) {
+	private static boolean isGonnaPlay(Scanner in) {
 		/*
 		 * Prompts the user if they want to play or fold their hand. Returns boolean
 		 * since they can either play or not.
@@ -229,7 +236,7 @@ public class Poker {
 		return false;
 	}
 
-	public static boolean isPairPlus(Scanner in, int playerWallet) {
+	private static boolean isPairPlus(Scanner in, int playerWallet) {
 		/*
 		 * Prompts the user to either play a pair plus wager or not. Returns boolean and
 		 * checks with wallet before asking.
@@ -252,7 +259,7 @@ public class Poker {
 		return false;
 	}
 
-	public static boolean playAgain(Scanner in, int playerWallet) {
+	private static boolean playAgain(Scanner in, int playerWallet) {
 		/*
 		 * Asks the user if they want to play again or not. Checks with wallet before
 		 * asking and returns boolean. It is <= to MAX_BET since ante is 50 and then
@@ -261,7 +268,7 @@ public class Poker {
 		if (playerWallet <= MAX_BET)
 			return true;
 
-		System.out.println("\nPlay again (Y/N)? you have $" + playerWallet + " left.");
+		System.out.print("\nPlay again (Y/N)? you have $" + playerWallet + " left.");
 		boolean isValidInput = false;
 		while (!isValidInput) {
 			String temp = in.nextLine().toLowerCase();
@@ -276,7 +283,7 @@ public class Poker {
 
 	}
 
-	public static int handType(String hand) {
+	private static int handType(String hand) {
 		/*
 		 * First breaks up the inputed hand into the 3 cards using getCardFromHand()
 		 * method. Then uses those cards to check for special cases such as pair or
@@ -303,7 +310,7 @@ public class Poker {
 			return HIGH_CARD;
 	}
 
-	public static String getCardFromHand(String hand, int index) {
+	private static String getCardFromHand(String hand, int index) {
 		/*
 		 * Method used to break inputed hand into individual cards. Returns one card at
 		 * a time.
@@ -321,7 +328,7 @@ public class Poker {
 			return card3;
 	}
 
-	public static boolean isPair(String card1, String card2, String card3) {
+	private static boolean isPair(String card1, String card2, String card3) {
 		/*
 		 * Uses individual cards to check if the hand contains a pair.
 		 */
@@ -330,7 +337,7 @@ public class Poker {
 				|| card1.substring(0, 1).equals(card3.substring(0, 1)));
 	}
 
-	public static boolean isFlush(String card1, String card2, String card3) {
+	private static boolean isFlush(String card1, String card2, String card3) {
 		/*
 		 * Uses individual cards to check if hand contains a flush
 		 */
@@ -338,7 +345,7 @@ public class Poker {
 				&& card2.substring(card2.length() - 1).equals(card3.substring(card3.length() - 1)));
 	}
 
-	public static boolean isStraight(String card1, String card2, String card3) {
+	private static boolean isStraight(String card1, String card2, String card3) {
 		/*
 		 * Uses individual cards to check if hand contains a flush
 		 */
@@ -353,7 +360,7 @@ public class Poker {
 		return (minCard + 1 == midCard && midCard + 1 == maxCard);
 	}
 
-	public static boolean isThreeOfAKind(String card1, String card2, String card3) {
+	private static boolean isThreeOfAKind(String card1, String card2, String card3) {
 		/*
 		 * Uses individual cards to check if the hand contains a 3 of a kind
 		 */
@@ -361,7 +368,7 @@ public class Poker {
 				&& card2.substring(0, 1).equals(card3.substring(0, 1)));
 	}
 
-	public static boolean isStraightFlush(String card1, String card2, String card3) { // Not finished
+	private static boolean isStraightFlush(String card1, String card2, String card3) { // Not finished
 		/*
 		 * uses individual cards to see if the hand contains a straight flush
 		 */
@@ -387,7 +394,7 @@ public class Poker {
 			return false;
 	}
 
-	public static int getValidAnte(Scanner in, int playerWallet) {
+	private static int getValidAnte(Scanner in, int playerWallet) {
 		/*
 		 * Asks player to place an ante wager. Mandatory to play.
 		 */
@@ -409,7 +416,7 @@ public class Poker {
 		return 0;
 	}
 
-	public static int getValidPairPlus(Scanner in, int playerWallet) {
+	private static int getValidPairPlus(Scanner in, int playerWallet) {
 		/*
 		 * If player said they want to place a pair plus wager, this method makes sure
 		 * they place a valid one. Checks with wallet for validity.
@@ -432,7 +439,7 @@ public class Poker {
 		return 0;
 	}
 
-	public static int getCardValue(String card) {
+	private static int getCardValue(String card) {
 		/*
 		 * Used to determine the value of individual cards.
 		 */
@@ -455,11 +462,11 @@ public class Poker {
 
 	}
 
-	public static String getCard() {
+	private static String getCard() {
 		return getFace() + getSuit();
 	}
 
-	public static String getFace() {
+	private static String getFace() {
 		int temp = (int) (Math.random() * NUM_FACES) + 2;
 
 		if (temp <= 10)
@@ -475,7 +482,7 @@ public class Poker {
 
 	}
 
-	public static String getSuit() {
+	private static String getSuit() {
 		int temp = (int) (Math.random() * NUM_SUITS);
 		if (temp == 0)
 			return "H";
@@ -487,14 +494,14 @@ public class Poker {
 			return "C";
 	}
 
-	public static boolean isUnique(String playerHand, String card) {
+	private static boolean isUnique(String playerHand, String card) {
 		/*
 		 * Checks the new card with the playerhand to see if it has already been drawn.
 		 */
 		return playerHand.indexOf(card) == -1;
 	}
 
-	public static boolean isUnique(String playerHand, String dealerHand, String card) {
+	private static boolean isUnique(String playerHand, String dealerHand, String card) {
 		/*
 		 * Checks with the playerhand and dealerhand to see if the new card is unique.
 		 */

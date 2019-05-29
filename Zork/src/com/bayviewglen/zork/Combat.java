@@ -8,21 +8,22 @@ public class Combat {
 	private Parser parser;
 	public static boolean isInCombat = false;
 	public static Enemy enemy;
-	public static HashMap<String, Items> inventory;
+	public static List inventory;
 	public int playerHealth;
 	
-	public Combat(Enemy enemy, HashMap inventory, int health) {
+	public Combat(Enemy enemy, List inventory, int health) {
 		this.enemy = enemy;
 		this.inventory = inventory;
 		this.playerHealth = health;
 		parser = new Parser();
 	}
 	
-	public void doCombat() {
+	public int doCombat() {
 		while(playerHealth > 0 && enemy.getHealth() > 0) {
 			Command command = parser.getCommand();
-			
+			//TODO 
 		}
+		return playerHealth;
 	}
 	
 	/**
