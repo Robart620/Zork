@@ -46,6 +46,18 @@ Item Name: Lamp
 Item Description: A light that brightens even the darkest paths. Hitting something with it is pretty useless.
 Item Weight: 10
 Item Power: 1
+Item Name: Nerf Sword
+Item Description: It is almost a sword. It hurts when it hits you, kind of.
+Item Weight: 20
+Item Power: 3
+Item Name: Baseball Bat
+Item Description: Only for those that are worthy.
+Item Weight: 15
+Item Power: 30
+Item Name: Old Provisions
+Item Description: These probably would have been very enjoyable 15 years ago. Now they make good projectile weapons.
+Item Weight: 5
+Item Power: 10
 
 
 
