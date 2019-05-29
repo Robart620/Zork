@@ -321,12 +321,8 @@ class Game {
 		String foodItem = command.getFoodItem();
 		// Try to leave current room.
 		for(Items i : inventory) {
-			
-				//try {
-					
-				//} catch{
-					//TODO
-				//}
+			if(i instanceof UtilityItem);
+				
 			}
 		}
 
