@@ -101,30 +101,34 @@ class Parser {
 		System.out.println(givenWords);
 		//System.out.println(synonymsMap.keySet());
 
+		Command command = new Command(givenWords);
+		
+		return command;
+		
 //		
-		if (tokenizer.hasMoreTokens())
-			commandWord = tokenizer.nextToken(); // get first word
-		else
-			commandWord = null;
-		if (tokenizer.hasMoreTokens())
-			direction = tokenizer.nextToken(); // get second word
-		else
-			direction = null;
-		if (tokenizer.hasMoreTokens())
-			item = tokenizer.nextToken();
-		else
-			item = null;
-		if (tokenizer.hasMoreTokens())
-			enemy = tokenizer.nextToken();
-		else
-			enemy = null;
-		// note: we just ignore the rest of the input line.
-		// Now check whether this word is known. If so, create a command
-		// with it. If not, create a "nil" command (for unknown command).
-		if (commands.isCommand(commandWord))
-			return new Command(commandWord, direction, item, enemy);
-		else
-			return new Command(null, direction, item, enemy);
+//		if (tokenizer.hasMoreTokens())
+//			commandWord = tokenizer.nextToken(); // get first word
+//		else
+//			commandWord = null;
+//		if (tokenizer.hasMoreTokens())
+//			direction = tokenizer.nextToken(); // get second word
+//		else
+//			direction = null;
+//		if (tokenizer.hasMoreTokens())
+//			item = tokenizer.nextToken();
+//		else
+//			item = null;
+//		if (tokenizer.hasMoreTokens())
+//			enemy = tokenizer.nextToken();
+//		else
+//			enemy = null;
+//		// note: we just ignore the rest of the input line.
+//		// Now check whether this word is known. If so, create a command
+//		// with it. If not, create a "nil" command (for unknown command).
+//		if (commands.isCommand(givenWords))
+//			return new Command(commandWord, direction, item, enemy);
+//		else
+//			return new Command(null, direction, item, enemy);
 	}
 
 	/**
