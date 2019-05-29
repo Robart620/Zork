@@ -291,7 +291,13 @@ class Game {
 				Combat fight = new Combat(currentRoom.getEnemy(), inventory, playerHealth);
 				playerHealth = fight.doCombat();
 			}
-		} else if (commandWord.equals("look")) {
+		} else if(commandWord.equals("take")) {
+			
+		}else if (commandWord.equals("jump")) {
+			
+		}
+			
+		else if (commandWord.equals("look")) {
 			System.out.println(currentRoom.longDescription());
 			if (currentRoom.containsEnemy())
 				System.out.println(currentRoom.getEnemy().getName() + " is looking at you. He clearly wants tussel.");
