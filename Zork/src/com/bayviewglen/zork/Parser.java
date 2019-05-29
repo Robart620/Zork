@@ -85,7 +85,7 @@ class Parser {
 
 			}
 		}
-		System.out.println(givenWords);
+		//System.out.println(givenWords);
 		// showCommands();
 
 		ArrayList<String> finalWords = new ArrayList<String>();
@@ -130,7 +130,7 @@ class Parser {
 		if (!hasItem)
 			finalWords.add(null);
 		
-		System.out.println(finalWords);
+		//System.out.println(finalWords);
 
 		
 		commandWord = finalWords.get(0);

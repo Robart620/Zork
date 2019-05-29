@@ -55,10 +55,10 @@ class Command {
 		return enemy;
 	}
 	// 
-	public String getFoodItem() {
-		return commandWord;
-		
-	}
+//	public String getFoodItem() {
+//		return commandWord;
+//		
+//	}
 
 	/**
 	 * Return true if this command was not understood.

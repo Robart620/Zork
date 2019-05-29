@@ -1,4 +1,5 @@
-go: go, proceed, head, travel, move, progress, travel, hightail, journey, advance, run, walk, jog, exit
+go: go, proceed, head, travel, move, progress, travel, hightail, journey, advance, run, walk, jog, exit, traverse
+play: play
 quit: quit, retire
 eat: eat, consume, chew, devour, dine, ingest, nibble, swallow
 help: help
@@ -16,8 +17,10 @@ drop: drop, abandon, release, dump
 Bellissimogre: Bellissimogre
 Chap-Men: Chap-Men
 Anthrollny: Anthrollny
-north: north, up, n, northward
-south: south, down, s, southward
-east: east, right, e, eastward
-west: west, left, w, westward
+north: north, n, northward
+south: south, s, southward
+east: east, left, e, eastward
+west: west, right, w, westward
+up: up, u
+down: down, d
 
