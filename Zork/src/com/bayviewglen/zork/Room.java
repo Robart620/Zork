@@ -91,8 +91,9 @@ class Room
      */
     public String longDescription()
     {
-    	
-        return "Room: " + roomName +"\n\n" + description + "\n" + exitString();
+    	if(roomEnemy == null)
+    		 return "Room: " + roomName +"\n\n" + description + "\n" + exitString();
+        return "Room: " + roomName +"\n\n" + description +"\n" + roomEnemy.getName() + " stares you down" + "\n" + exitString();
     }
 /**
      * Return a string describing the room's exits, for example
