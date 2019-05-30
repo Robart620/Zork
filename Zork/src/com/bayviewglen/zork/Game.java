@@ -426,4 +426,3 @@ class Game {
 		}
 	}
 }
-// this is a test 2
