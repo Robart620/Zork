@@ -82,7 +82,7 @@ class Parser {
 			for (int j = 0; j < keys.length; j++) {
 				if (isSynonym(keys[j], givenWords.get(i), synonymsMap))
 					givenWords.set(i, keys[j]);
-					System.out.println(givenWords);
+					//System.out.println(givenWords);
 
 			}
 		}

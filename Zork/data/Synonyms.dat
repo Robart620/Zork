@@ -24,31 +24,31 @@ south: south, s, southward
 east: east, left, e, eastward
 west: west, right, w, westward
 up: up, u
-down: down, d
-sword: sword
-hammond's hammer: hammond's, hammond
-chap-men's bone-and-marrow: bone-and-marrow
-magic deck: magic
-conductor's club: conductor's, conductors
-anthony's teeth: anthony's, anthonys
-surface pen: surface
-cool looking rock: cool
-buster sword: buster
-copper shortsword: copper
-lamp: lamp
-baseball bat: baseball
-nerf sword: nerf
-piece of paper: piece
-old provisions: old
-card-key: card
-kard master kevin's head: head
-slab of meat: meat
-shoddy leaf hat: shoddy
-another piece of paper: another
-theresa-tron's note: note
-warm milk: milk
-apple: apple
-singular baby carrot: carrot
-pork chop: pork
+down:down, d
+sword:sword
+hammond's hammer:hammond's, hammond
+chap-men's bone-and-marrow:bone-and-marrow
+magic deck:magic
+conductor's club:conductor's, conductors
+anthony's teeth:anthony's, anthonys
+surface pen:surface
+cool looking rock:cool
+buster sword:buster
+copper shortsword:copper
+lamp:lamp
+baseball bat:baseball
+nerf sword:nerf
+piece of paper:piece
+old provisions:old
+card-key:card
+kard master kevin's head:head
+slab of meat:meat
+shoddy leaf hat:shoddy
+another piece of paper:another
+theresa-tron's note:note
+warm milk:milk
+apple:apple
+singular baby carrot:carrot
+pork chop:pork
 
 
