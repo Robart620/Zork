@@ -2,6 +2,7 @@ package com.bayviewglen.zork;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
@@ -30,7 +31,7 @@ class Game {
 	private HashMap<String, UtilityItem> masterUtilityItemMap;
 	private HashMap<String, Enemy> masterEnemyMap;
 	public int inventoryWeight = 10;
-	public List<Items> inventory;
+	public List<Items> inventory = new ArrayList<>();
 	private int playerHealth = 100;
 	private int gold = 500;
 	private Poker poker;
@@ -288,8 +289,7 @@ class Game {
 			if (!currentRoom.containsEnemy())
 				System.out.println("There is no enemy to attack. Who's really the bad guy?");
 			else {
-				Combat fight = new Combat(currentRoom.getEnemy(), inventory, playerHealth);
-				playerHealth = fight.doCombat();
+				combat(command);
 			}
 		} else if (commandWord.equals("take")) {
 			if (currentRoom.itemsList.isEmpty())
@@ -301,19 +301,17 @@ class Game {
 							currentRoom.itemsList.remove(i);
 							inventory.add(i);
 							System.out.println("you pick up the " + i.getName());
-						}
-						else {
+						} else {
 							System.out.println("The " + i.getName() + " is too heavy... weakling");
 						}
 					} else
 						System.out.println("That item is not here.");
-
 				}
 			else
 				System.out.println("What do you want to take?");
 
 		} else if (commandWord.equals("jump")) {
-
+			// TODO
 		}
 
 		else if (commandWord.equals("look")) {
@@ -326,6 +324,12 @@ class Game {
 					System.out.println(s.getName());
 				}
 			}
+			if(!inventory.isEmpty()) {
+				System.out.print("Your inventory contains: " );
+				for (Items i : inventory)
+					System.out.print(i.getName() + "   ");
+			}else
+				System.out.println("Your inventory is empty.");
 		} else if (commandWord.equals("play")) {
 			if (currentRoom.getRoomName().equals("Casino")) {
 				poker = new Poker(gold);
@@ -345,6 +349,29 @@ class Game {
 		return false;
 	}
 
+	private void combat(Command command) {
+		// Combat fight = new Combat(currentRoom.getEnemy(), inventory, playerHealth);
+		// playerHealth = fight.doCombat();
+		if (command.hasItemWord()) {
+			for (Items i : inventory) {
+				if (command.getItem().equals(i.getName().toLowerCase()) && i instanceof UtilityItem) {							
+					try {
+						UtilityItem item = (UtilityItem) i;
+						currentRoom.getEnemy().setHealth(currentRoom.getEnemy().getHealth() - item.getPower());
+						System.out.println("You strike " + currentRoom.getEnemy().getName() + " with your "
+								+ command.getItem());
+						playerHealth -= currentRoom.getEnemy().getDamagePerHit();
+						System.out.println(currentRoom.getEnemy().getName() + (" hits back!"));
+						System.out.println("You have " + playerHealth + " left.");
+					} catch (Exception e) {
+						System.out.println("You can't attack with " + i.getName());
+					}
+				}
+			}
+		} else
+			System.out.println("You've gotta hit em with something you have.");
+	}
+	
 	private void eat(Command command) {
 		if (!command.hasFoodItem()) {
 			System.out.println("What're you trynna eat, home boy?");
