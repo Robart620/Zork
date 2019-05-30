@@ -248,14 +248,14 @@ class Game {
 
 		}
 		if (playerHealth < 1) {
-			System.out.println("You died. Nice.");
+			System.out.println("That went just about as well as expected. You died.");
 			System.out.println("Now would be a good time to reset the game and try again.");
 		} else {
-			System.out.println("Congradulations!");
-			System.out.println("You defeated the evil Card Master Keving.");
-			System.out.println("No longer can he sling bad grades at Bill!");
+			System.out.println("Wow...how'd you do that?");
+			System.out.println("You defeated the evil Kard Master Kevin!");
+			System.out.println("No longer can he sling bad grades at Bill...sadly...");
 			System.out.println("Everybody's average is saved");
-			System.out.println("Huzzah");
+			System.out.println("Huzzah!");
 			System.out.println();
 			System.out.println("Goodbye");
 		}
@@ -266,8 +266,8 @@ class Game {
 	 */
 	private void printWelcome() {
 		System.out.println();
-		System.out.println("Welcome to Zork!");
-		System.out.println("Zork is a new, incredibly boring adventure game.");
+		System.out.println("Welcome to Dork!");
+		System.out.println("Dork is a new, incredibly interesting, exciting, and all around high mark worthy adventure game.");
 		System.out.println("Type 'help' if you need help.");
 		System.out.println();
 		System.out.println(currentRoom.longDescription());
@@ -323,7 +323,7 @@ class Game {
 		else if (commandWord.equals("look")) {
 			System.out.println(currentRoom.longDescription());
 			if (currentRoom.containsEnemy())
-				System.out.println(currentRoom.getEnemy().getName() + " is looking at you. He clearly wants tussel.");
+				System.out.println(currentRoom.getEnemy().getName() + " is eyeing you down. He clearly wants to tussel.");
 			if (!currentRoom.itemsList.isEmpty()) {
 				System.out.print("The things around you are: ");
 				for (Items s : currentRoom.itemsList) {
@@ -399,7 +399,7 @@ class Game {
 					playerHealth += Integer.parseInt(item.getContents());
 					System.out.println("You have" + playerHealth + " HP.");
 				} catch (Exception e) {
-					System.out.println("You can't eat " + i.getName());
+					System.out.println("You can't eat " + i.getName() + "... thought that was somewhat obvious");
 				}
 
 			}
