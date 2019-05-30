@@ -132,4 +132,8 @@ class Room
 	public Enemy getEnemy() {
 		return roomEnemy;
 	}
+	public void killEnemy() {
+		itemsList.add(roomEnemy.getDeathItem());
+		roomEnemy = null;
+	}
 }

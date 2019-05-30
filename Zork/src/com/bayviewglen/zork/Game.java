@@ -30,14 +30,15 @@ class Game {
 	private HashMap<String, KeyItem> masterKeyItemMap;
 	private HashMap<String, UtilityItem> masterUtilityItemMap;
 	private HashMap<String, Enemy> masterEnemyMap;
-	public int inventoryWeight = 10;
+	public int inventoryWeight = 0;
 	public List<Items> inventory = new ArrayList<>();
 	private int playerHealth = 100;
 	private int gold = 500;
 	private Poker poker;
 
 	public final int MAX_INVENTORY_WEIGHT = 100;
-	private final String STARTING_ROOM = "GRASSY_KNOLL";
+	private final String STARTING_ROOM = "PARK";
+	private final String STARTING_ITEM = "LAMP";
 
 	private void initKeyItems(String fileName) throws Exception {
 		masterKeyItemMap = new HashMap<String, KeyItem>();
@@ -136,7 +137,7 @@ class Game {
 				}
 
 				// Puts enemy in master map
-				masterEnemyMap.put(enemyName.toUpperCase().substring(11).trim().replaceAll(" ", "_"), enemy);
+				masterEnemyMap.put(enemyName.toUpperCase().substring(5).trim().replaceAll(" ", "_"), enemy);
 
 			}
 			enemyScanner.close();
@@ -186,7 +187,7 @@ class Game {
 
 				String enemy = roomScanner.nextLine().trim();
 				if (enemy.length() > 6) {
-					room.roomEnemy = masterEnemyMap.get(enemy.substring(6).trim().toUpperCase().replaceAll(" ", "_"));
+					room.roomEnemy = masterEnemyMap.get(enemy.substring(7).trim().toUpperCase().replaceAll(" ", "_"));
 				}
 
 				// This puts the room we created (Without the exits in the masterMap)
@@ -226,6 +227,7 @@ class Game {
 			initEnemies("data/Enemies.dat");
 			initRooms("data/Rooms.dat");
 			currentRoom = masterRoomMap.get(STARTING_ROOM);
+			inventory.add(masterUtilityItemMap.get(STARTING_ITEM));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -297,10 +299,14 @@ class Game {
 			else if (command.hasItemWord())
 				for (Items i : currentRoom.itemsList) {
 					if (command.getItem().equals((i.getName().toLowerCase()))) {
-						if (inventoryWeight + i.getWeight() > MAX_INVENTORY_WEIGHT) {
+						if (inventoryWeight + i.getWeight() < MAX_INVENTORY_WEIGHT) {
 							currentRoom.itemsList.remove(i);
 							inventory.add(i);
 							System.out.println("you pick up the " + i.getName());
+							if(i.getName().equals("Kard Master Kevin's tataHead"))
+								return true;
+							else
+								return false;
 						} else {
 							System.out.println("The " + i.getName() + " is too heavy... weakling");
 						}
@@ -324,12 +330,13 @@ class Game {
 					System.out.println(s.getName());
 				}
 			}
+			System.out.println("Your inventory contains: " );
+			System.out.println("\t- " + gold + " gold");
 			if(!inventory.isEmpty()) {
-				System.out.print("Your inventory contains: " );
 				for (Items i : inventory)
-					System.out.print(i.getName() + "   ");
-			}else
-				System.out.println("Your inventory is empty.");
+					System.out.println("\t- " + i.getName());
+				System.out.println();
+			}
 		} else if (commandWord.equals("play")) {
 			if (currentRoom.getRoomName().equals("Casino")) {
 				poker = new Poker(gold);
@@ -362,7 +369,13 @@ class Game {
 								+ command.getItem());
 						playerHealth -= currentRoom.getEnemy().getDamagePerHit();
 						System.out.println(currentRoom.getEnemy().getName() + (" hits back!"));
-						System.out.println("You have " + playerHealth + " left.");
+						System.out.println("\"" + currentRoom.getEnemy().dialogue() + "\"");
+						System.out.println("You have " + playerHealth + " HP.");
+						if(currentRoom.getEnemy().getHealth() < 1) {
+							currentRoom.killEnemy();
+						}
+						
+						
 					} catch (Exception e) {
 						System.out.println("You can't attack with " + i.getName());
 					}
@@ -384,6 +397,7 @@ class Game {
 				try {
 					KeyItem item = (KeyItem) i;
 					playerHealth += Integer.parseInt(item.getContents());
+					System.out.println("You have" + playerHealth + " HP.");
 				} catch (Exception e) {
 					System.out.println("You can't eat " + i.getName());
 				}
