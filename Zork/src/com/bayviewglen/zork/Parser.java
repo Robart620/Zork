@@ -82,6 +82,7 @@ class Parser {
 			for (int j = 0; j < keys.length; j++) {
 				if (isSynonym(keys[j], givenWords.get(i), synonymsMap))
 					givenWords.set(i, keys[j]);
+					System.out.println(givenWords);
 
 			}
 		}
@@ -130,7 +131,7 @@ class Parser {
 		if (!hasItem)
 			finalWords.add(null);
 		
-		//System.out.println(finalWords);
+		System.out.println(finalWords);
 
 		
 		commandWord = finalWords.get(0);
