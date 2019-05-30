@@ -1,20 +1,25 @@
 Name: Bellissimogre
 Health: 100
-Damage Per Hit: 20
+Damage Per Hit: 10
 Dialogue: I don't like your tone!, Lets up the beats per minute!, Lets up the beats per minute!
 Item: Conductor's Club
 Name: Anthrollny
 Health: 100
-Damage Per Hit: 10
+Damage Per Hit: 5
 Dialogue: That hit was a 4- at best!, And you call yourself a Geek! Pathetic., That hit was a 4- at best!
 Item: Surface Pen
 Name: Chap-Men
 Health: 100
-Damage Per Hit: 17
+Damage Per Hit: 9
 Dialogue: *angry chattering*, *angry chattering*, *angry chattering*
 Item: Chap-Men's Bone-and-Marrow
 Name: Con-Brad
 Health: 100
-Damage Per Hit: 15
+Damage Per Hit: 8
 Dialogue: That's Rawsome broksi!, Gnarly hit man!, That's like totally not kawai!
 Item: Buster Sword
+Name: Kard Master Kevin
+Health: 150
+Damage Per Hit: 12
+Dialogue: Time to DEAL with you! HAHAHA, Off with your head! HAHAHA, Dying SUITS you! HAHAHA
+Item: Kard Master Kevin's Head

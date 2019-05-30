@@ -206,10 +206,10 @@ Enemy:
 Room Name: Screaming Halls
 Room Description: You cover your ears as the deafening pitch tears your soul to pieces bit by bit. What monstrosity could make this noi... is that Chiu?
 Exit Rooms: W-Storage Room, S-Boss Room
-Items:
+Items: Magic Deck
 Enemy:
 Room Name: Boss Room
 Room Description: Kard Master Kevin?!?!
 Exit Rooms: N-Storage Room
 Items:
-Enemy:
+Enemy: Kard Master Kevin

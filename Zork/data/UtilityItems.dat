@@ -1,27 +1,27 @@
 Item Name: Sword
 Item Description: this do be a sword
 Item Weight: 20
-Item Power: 15
+Item Power: 40
 Item Name: Hammond's Hammer
 Item Description: An axe that crackles with electricity. Good thing the handle is wooden.
 Item Weight: 30
-Item Power: 30
+Item Power: 50
 Item Name: Chap-Men's Bone-and-Marrow
 Item Description: A 'perfect' melee weapon.
 Item Weight: 12
-item Power: 12
+item Power: 30
 Item Name: Magic Deck
 Item Description: Unlimited throwing potential. Too bad you're trash at throwing cards.
 Item Weight: 5
-Item Power: 5
+Item Power: 25
 Item Name: Conductor's Club
 Item Description: Carrying this makes you sweat profusely.
 Item Weight: 30
-Item Power: 20
+Item Power: 40
 Item Name: Surface Pen
 Item Description: Magical pen with limited potential.
 Item Weight: 1
-Item Power: 8
+Item Power: 20
 Item Name: Anthony's Teeth
 Item Description: Pretty much just regular teeth. Why do you  have these?
 Item Weight: 1
@@ -29,11 +29,11 @@ Item Power: 1
 Item Name: Cool Looking Rock
 Item Description: It deserves a name. Clide will suffice.
 Item Weight: 8
-Item Power: 10
+Item Power: 30
 Item Name: Buster Sword
 item Description: The most unbelievably large sword you've ever seen. How are you even carrying this?
 Item Weight: 50
-Item Power: 40
+Item Power: 50
 Item Name: Copper Shortsword
 Item Description: It is a sword, I guess. You're really going to want something better than this.
 Item Weight: 10
@@ -45,15 +45,15 @@ Item Power: 10
 Item Name: Nerf Sword
 Item Description: It is almost a sword. It hurts when it hits you, kind of.
 Item Weight: 20
-Item Power: 3
+Item Power: 10
 Item Name: Baseball Bat
 Item Description: Only for those that are worthy.
 Item Weight: 15
-Item Power: 30
+Item Power: 50
 Item Name: Old Provisions
 Item Description: These probably would have been very enjoyable 15 years ago. Now they make good projectile weapons.
 Item Weight: 5
-Item Power: 10
+Item Power: 20
 
 
 
