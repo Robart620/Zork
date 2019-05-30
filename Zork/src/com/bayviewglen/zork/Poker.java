@@ -3,7 +3,7 @@ package com.bayviewglen.zork;
 import java.util.Scanner;
 
 public class Poker {
-	
+
 	/*
 	 * Description: User plays 3-card poker against a dealer. Asked to place an ante
 	 * wager, and then given the option for pair plus. User is asked if they want to
@@ -35,16 +35,16 @@ public class Poker {
 	private static final int FLUSH = 200;
 	private static final int PAIR = 100;
 	private static final int HIGH_CARD = 0;
-	
+
 	private static int playerWallet;
 	private static int anteWager = 0;
 	private static int pairPlusWager = 0;
 	private static int playWager = 0;
-	
-	public Poker (int playerGold) {
+
+	public Poker(int playerGold) {
 		playerWallet = playerGold;
 	}
-	
+
 	public int play() {
 
 		int playerHandValue;
@@ -173,14 +173,10 @@ public class Poker {
 			isGameOver = playAgain(in, playerWallet);
 
 		}
-		//THIS IS WHERE YOU EXIT THE GAME
+		// THIS IS WHERE YOU EXIT THE GAME
 		System.out.println(
 				"\nThanks for playing! \n\nHope you know when hold 'em, \nknow when to fold 'em, \nknow when to walk away, \nknow when to run.");
-
-		
-		
 		return playerWallet;
-
 	}
 
 	private static int getBestCard(String hand) {

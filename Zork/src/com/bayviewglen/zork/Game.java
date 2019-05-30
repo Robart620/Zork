@@ -37,7 +37,7 @@ class Game {
 	private Poker poker;
 
 	public final int MAX_INVENTORY_WEIGHT = 100;
-	private final String STARTING_ROOM = "PARK";
+	private final String STARTING_ROOM = "GRASSY_KNOLL";
 	private final String STARTING_ITEM = "LAMP";
 
 	private void initKeyItems(String fileName) throws Exception {
@@ -288,6 +288,10 @@ class Game {
 			printHelp();
 		else if (commandWord.equals("go"))
 			goRoom(command);
+		else if (commandWord.equals("drop"));
+			//TODO This method, Phillip 
+		else if (commandWord.equals("go"))
+			goRoom(command);
 		else if (commandWord.equals("attack")) {
 			if (!currentRoom.containsEnemy())
 				System.out.println("There is no enemy to attack. Who's really the bad guy?");
@@ -321,7 +325,7 @@ class Game {
 			if (currentRoom.getRoomName().equals("Abyss") || currentRoom.getRoomName().equals("Cliff Face")
 					|| currentRoom.getRoomName().equals("Top of Cliff") || currentRoom.getRoomName().equals("Bridge")) {
 				System.out.println(
-						"'Kowabunga it is' you mutter, right before hurling your body to it's untimely demise below");
+						"\"Kowabunga it is\" you mutter, right before hurling your body to it's untimely demise below");
 				playerHealth = 0;
 			}
 		}
@@ -395,7 +399,6 @@ class Game {
 			return;
 		}
 		String foodItem = command.getFoodItem();
-		// Try to leave current room.
 		for (Items i : inventory) {
 			if (i instanceof UtilityItem && foodItem.equals(i.getName())) {
 				try {
