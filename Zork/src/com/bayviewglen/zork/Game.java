@@ -357,9 +357,7 @@ class Game {
 	}
 
 	private void combat(Command command) {
-		// Combat fight = new Combat(currentRoom.getEnemy(), inventory, playerHealth);
-		// playerHealth = fight.doCombat();
-		if (command.hasItemWord()) {
+		if (command.hasItemWord() && !inventory.isEmpty()) {
 			for (Items i : inventory) {
 				if (command.getItem().equals(i.getName().toLowerCase()) && i instanceof UtilityItem) {							
 					try {
