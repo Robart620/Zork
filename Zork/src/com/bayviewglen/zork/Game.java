@@ -267,7 +267,8 @@ class Game {
 	private void printWelcome() {
 		System.out.println();
 		System.out.println("Welcome to Dork!");
-		System.out.println("Dork is a new, incredibly interesting, exciting, and all around high mark worthy adventure game.");
+		System.out.println(
+				"Dork is a new, incredibly interesting, exciting, and all around high mark worthy adventure game.");
 		System.out.println("Type 'help' if you need help.");
 		System.out.println();
 		System.out.println(currentRoom.longDescription());
@@ -303,7 +304,7 @@ class Game {
 							currentRoom.itemsList.remove(i);
 							inventory.add(i);
 							System.out.println("you pick up the " + i.getName());
-							if(i.getName().equals("Kard Master Kevin's tataHead"))
+							if (i.getName().equals("Kard Master Kevin's tataHead"))
 								return true;
 							else
 								return false;
@@ -317,22 +318,28 @@ class Game {
 				System.out.println("What do you want to take?");
 
 		} else if (commandWord.equals("jump")) {
-			// TODO
+			if (currentRoom.getRoomName().equals("Abyss") || currentRoom.getRoomName().equals("Cliff Face")
+					|| currentRoom.getRoomName().equals("Top of Cliff") || currentRoom.getRoomName().equals("Bridge")) {
+				System.out.println(
+						"'Kowabunga it is' you mutter, right before hurling your body to it's untimely demise below");
+				playerHealth = 0;
+			}
 		}
 
 		else if (commandWord.equals("look")) {
 			System.out.println(currentRoom.longDescription());
 			if (currentRoom.containsEnemy())
-				System.out.println(currentRoom.getEnemy().getName() + " is eyeing you down. He clearly wants to tussel.");
+				System.out
+						.println(currentRoom.getEnemy().getName() + " is eyeing you down. He clearly wants to tussel.");
 			if (!currentRoom.itemsList.isEmpty()) {
 				System.out.print("The things around you are: ");
 				for (Items s : currentRoom.itemsList) {
 					System.out.println(s.getName());
 				}
 			}
-			System.out.println("Your inventory contains: " );
+			System.out.println("Your inventory contains: ");
 			System.out.println("\t- " + gold + " gold");
-			if(!inventory.isEmpty()) {
+			if (!inventory.isEmpty()) {
 				for (Items i : inventory)
 					System.out.println("\t- " + i.getName());
 				System.out.println();
@@ -340,7 +347,7 @@ class Game {
 		} else if (commandWord.equals("play")) {
 			if (currentRoom.getRoomName().equals("Casino")) {
 				poker = new Poker(gold);
-				poker.play();
+				gold = poker.play();
 			} else
 				System.out.println("This is not the time for play you child.");
 		} else if (commandWord.equals("eat")) {
@@ -359,21 +366,20 @@ class Game {
 	private void combat(Command command) {
 		if (command.hasItemWord() && !inventory.isEmpty()) {
 			for (Items i : inventory) {
-				if (command.getItem().equals(i.getName().toLowerCase()) && i instanceof UtilityItem) {							
+				if (command.getItem().equals(i.getName().toLowerCase()) && i instanceof UtilityItem) {
 					try {
 						UtilityItem item = (UtilityItem) i;
 						currentRoom.getEnemy().setHealth(currentRoom.getEnemy().getHealth() - item.getPower());
-						System.out.println("You strike " + currentRoom.getEnemy().getName() + " with your "
-								+ command.getItem());
+						System.out.println(
+								"You strike " + currentRoom.getEnemy().getName() + " with your " + command.getItem());
 						playerHealth -= currentRoom.getEnemy().getDamagePerHit();
 						System.out.println(currentRoom.getEnemy().getName() + (" hits back!"));
 						System.out.println("\"" + currentRoom.getEnemy().dialogue() + "\"");
 						System.out.println("You have " + playerHealth + " HP.");
-						if(currentRoom.getEnemy().getHealth() < 1) {
+						if (currentRoom.getEnemy().getHealth() < 1) {
 							currentRoom.killEnemy();
 						}
-						
-						
+
 					} catch (Exception e) {
 						System.out.println("You can't attack with " + i.getName());
 					}
@@ -382,7 +388,7 @@ class Game {
 		} else
 			System.out.println("You've gotta hit em with something you have.");
 	}
-	
+
 	private void eat(Command command) {
 		if (!command.hasFoodItem()) {
 			System.out.println("What're you trynna eat, home boy?");
