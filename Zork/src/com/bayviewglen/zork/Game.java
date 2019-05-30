@@ -286,10 +286,17 @@ class Game {
 		String commandWord = command.getCommandWord();
 		if (commandWord.equals("help"))
 			printHelp();
-		else if (commandWord.equals("go"))
-			goRoom(command);
-		else if (commandWord.equals("drop"));
-			//TODO This method, Phillip 
+		else if (commandWord.equals("inventory")) {
+			System.out.println("Your inventory contains: ");
+			System.out.println("\t- " + gold + " gold");
+			if (!inventory.isEmpty()) {
+				for (Items i : inventory)
+					System.out.println("\t- " + i.getName());
+				System.out.println();
+			}
+		}
+		else if (commandWord.equals("drop"))
+			drop(command);
 		else if (commandWord.equals("go"))
 			goRoom(command);
 		else if (commandWord.equals("attack")) {
@@ -302,22 +309,7 @@ class Game {
 			if (currentRoom.itemsList.isEmpty())
 				System.out.println("Use your eyes moron, ain't nothing here!");
 			else if (command.hasItemWord())
-				for (Items i : currentRoom.itemsList) {
-					if (command.getItem().equals((i.getName().toLowerCase()))) {
-						if (inventoryWeight + i.getWeight() < MAX_INVENTORY_WEIGHT) {
-							currentRoom.itemsList.remove(i);
-							inventory.add(i);
-							System.out.println("you pick up the " + i.getName());
-							if (i.getName().equals("Kard Master Kevin's tataHead"))
-								return true;
-							else
-								return false;
-						} else {
-							System.out.println("The " + i.getName() + " is too heavy... weakling");
-						}
-					} else
-						System.out.println("That item is not here.");
-				}
+				take(command);
 			else
 				System.out.println("What do you want to take?");
 
@@ -365,6 +357,40 @@ class Game {
 			System.out.println("Do you really think you should be eating at a time like this?");
 		}
 		return false;
+	}
+
+	private boolean take(Command command) {
+		for (Items i : currentRoom.itemsList) {
+			if (command.getItem().equals((i.getName().toLowerCase()))) {
+				if (inventoryWeight + i.getWeight() < MAX_INVENTORY_WEIGHT) {
+					currentRoom.itemsList.remove(i);
+					inventory.add(i);
+					System.out.println("you pick up the " + i.getName());
+					if (i.getName().equals("Kard Master Kevin's tataHead"))
+						return true;
+					else
+						return false;
+				} else {
+					System.out.println("The " + i.getName() + " is too heavy... weakling");
+				}
+			} else
+				System.out.println("That item is not here.");
+		}
+		return false;
+	}
+
+	private void drop(Command command) {
+		if (command.hasItemWord() && !inventory.isEmpty()) {
+			for(Items i : inventory) {
+				if (i.getName().equals(command.getItem())){
+					inventory.remove(i);
+					System.out.println("You drop your "  + i.getName());
+					return;
+				}
+			}
+		}
+		System.out.println("You can only drop items you have in your inventory");
+		
 	}
 
 	private void combat(Command command) {
