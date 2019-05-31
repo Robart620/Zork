@@ -294,23 +294,8 @@ class Game {
 					System.out.println("\t- " + i.getName());
 				System.out.println();
 			}
-		}
-		else if (commandWord.equals("drop")) {
-			if (command.hasItemWord() && !inventory.isEmpty()) {
-				for(/*Items i : inventory*/int i = 0; i < inventory.size(); i++) {
-					if (inventory.get(i).getName().toLowerCase().equals(command.getItem())){
-						System.out.println("You drop your "  + inventory.get(i).getName());
-						currentRoom.itemsList.add(inventory.get(i));
-						inventory.remove(inventory.get(i));
-						
-						
-					}
-					else System.out.println("You can only drop items you have in your inventory");
-				}
-			} else System.out.println("You have nothing in your inventory");
-			
-		}
-			
+		} else if (commandWord.equals("drop")) 
+			drop(command);
 		else if (commandWord.equals("go"))
 			goRoom(command);
 		else if (commandWord.equals("attack")) {
@@ -393,7 +378,6 @@ class Game {
 		return false;
 	}
 
-
 	private void combat(Command command) {
 		if (command.hasItemWord() && !inventory.isEmpty()) {
 			for (Items i : inventory) {
@@ -451,6 +435,22 @@ class Game {
 		System.out.println();
 		System.out.println("Your command words are:");
 		parser.showCommands();
+	}
+
+	private void drop(Command command) {
+		if (command.hasItemWord() && !inventory.isEmpty()) {
+			for (/* Items i : inventory */int i = 0; i < inventory.size(); i++) {
+				if (inventory.get(i).getName().toLowerCase().equals(command.getItem())) {
+					System.out.println("You drop your " + inventory.get(i).getName());
+					currentRoom.itemsList.add(inventory.get(i));
+					inventory.remove(inventory.get(i));
+					return;
+
+				} else
+					System.out.println("You can only drop items you have in your inventory");
+			}
+		} else
+			System.out.println("You have nothing in your inventory");
 	}
 
 	/**
