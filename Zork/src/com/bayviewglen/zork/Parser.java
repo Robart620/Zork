@@ -28,7 +28,7 @@ import java.util.StringTokenizer;
 class Parser {
 
 	private static final String[] nonImportantWords = { "a", "to", "the", "over", "at", "it" };
-	private CommandWords commands; // holds all valid command words
+	private CommandWords commands; // retrieves all valid command words
 
 	public Parser() {
 		commands = new CommandWords();
@@ -48,9 +48,12 @@ class Parser {
 		boolean hasEnemy = false;
 		boolean hasItem = false;
 
+		// assigns the synonyms.dat file to the synonyms map
+
 		synonymsMap = readSynonyms(synonymsMap, "data/Synonyms.dat");
 		String[] keys;
 
+		// creates and array of the keys from the synonyms has map
 		keys = getKeys(synonymsMap);
 
 		System.out.print("> "); // print prompt
@@ -77,75 +80,77 @@ class Parser {
 		for (int i = 0; i < givenWords.size(); i++) {
 			givenWords.set(i, givenWords.get(i).toLowerCase());
 		}
-
+		// checks to see if a word is a synonym, if that is true it replaces it eg:
+		// proceed becomes go
 		for (int i = 0; i < givenWords.size(); i++) {
 			for (int j = 0; j < keys.length; j++) {
 				if (isSynonym(keys[j], givenWords.get(i), synonymsMap))
 					givenWords.set(i, keys[j]);
-					//System.out.println(givenWords);
 
 			}
 		}
-		//System.out.println(givenWords);
-		// showCommands();
 
 		ArrayList<String> finalWords = new ArrayList<String>();
+
+		/*
+		 * checks to see if the given command (after synonyms have been replaced) has
+		 * various words with meanings namely a verb, a direction, a enemy, or a item,
+		 * if it is missing one off the former, it sets it to null it is important to
+		 * note that it only take the first of each that it finds, so if you type go
+		 * help north, while both help and go are classified as verbs, it only takes go
+		 * as it is before help
+		 * 
+		 */
 
 		for (int i = 0; i < givenWords.size(); i++) {
 			if (CommandWords.isCommand(givenWords.get(i))) {
 				finalWords.add(givenWords.get(i));
 				hasVerb = true;
 				i = givenWords.size();
-			}		
+			}
 		}
 		if (!hasVerb)
 			finalWords.add(null);
-		
+
 		for (int i = 0; i < givenWords.size(); i++) {
 			if (CommandWords.isDirection(givenWords.get(i))) {
 				finalWords.add(givenWords.get(i));
 				hasDirection = true;
 				i = givenWords.size();
-			}		
+			}
 		}
 		if (!hasDirection)
 			finalWords.add(null);
-		
+
 		for (int i = 0; i < givenWords.size(); i++) {
 			if (CommandWords.isEnemy(givenWords.get(i))) {
 				finalWords.add(givenWords.get(i));
 				hasEnemy = true;
 				i = givenWords.size();
-			}		
+			}
 		}
 		if (!hasEnemy)
 			finalWords.add(null);
-		
+
 		for (int i = 0; i < givenWords.size(); i++) {
 			if (CommandWords.isItem(givenWords.get(i))) {
 				finalWords.add(givenWords.get(i));
 				hasItem = true;
 				i = givenWords.size();
-			}		
+			}
 		}
 		if (!hasItem)
 			finalWords.add(null);
-		
-		System.out.println(finalWords);
 
-		
+		// ass the words will always be in the order of [verb, direction, enemy, item]
+		// this following line is ok
 		commandWord = finalWords.get(0);
 		direction = finalWords.get(1);
 		enemy = finalWords.get(2);
 		item = finalWords.get(3);
 
-	
-		// note: we just ignore the rest of the input line.
-		// Now check whether this word is known. If so, create a command
-		// with it. If not, create a "nil" command (for unknown command)
-		
-			return new Command(commandWord, direction, item, enemy);
-		
+		return new Command(commandWord, direction, item, enemy);
+
 	}
 
 	/**
@@ -175,6 +180,13 @@ class Parser {
 
 	}
 
+	/**
+	 * populates a hashmap with items from a data file
+	 * 
+	 * @param map
+	 * @param fileName
+	 * @return a hashmap with a string key, and an string array of values
+	 */
 	public HashMap<String, String[]> readSynonyms(HashMap<String, String[]> map, String fileName) {
 		try {
 			Scanner synScan = new Scanner(new File(fileName));
@@ -186,11 +198,14 @@ class Parser {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		// System.out.println(map);
 		return map;
 
 	}
-
+	/**
+	 *
+	 * @param map
+	 * @return  get the keys from a hashmap
+	 */
 	public String[] getKeys(HashMap<String, String[]> map) {
 		String[] keys = new String[map.size()];
 
@@ -203,6 +218,15 @@ class Parser {
 		return keys;
 	}
 
+	/**
+	 * checks to see if an individual given word (command) 
+	 * is a synonym of the commandGroup (key) from a hashmap
+	 * @param commandGroup
+	 * @param command
+	 * @param map
+	 * @return return true if it is a synonym, and false otherwise
+	 */
+	
 	public static boolean isSynonym(String commandGroup, String command, HashMap<String, String[]> map) {
 		for (String s : map.get(commandGroup)) {
 			if (s.equals(command)) {
