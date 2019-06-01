@@ -80,10 +80,13 @@ class Parser {
 
 		for (int i = 0; i < givenWords.size(); i++) {
 			for (int j = 0; j < keys.length; j++) {
-				if (isSynonym(keys[j], givenWords.get(i), synonymsMap))
+				if (isSynonym(keys[j], givenWords.get(i), synonymsMap)) {
 					givenWords.set(i, keys[j]);
-
+					
+				}
+				
 			}
+			//System.out.println(givenWords);
 		}
 
 		ArrayList<String> finalWords = new ArrayList<String>();
@@ -128,7 +131,7 @@ class Parser {
 		if (!hasItem)
 			finalWords.add(null);
 		
-		System.out.println(finalWords);
+		//System.out.println(finalWords);
 
 		
 		commandWord = finalWords.get(0);

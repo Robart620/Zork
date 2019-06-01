@@ -66,8 +66,9 @@ class CommandWords {
 	
 	public static boolean isItem(String aString) {
 		for (String a : wordsMap.get("item")) {
-			if(a.equals(aString))
+			if(a.equals(aString)) {
 				return true;
+			}
 		}
 		return false;
 	}

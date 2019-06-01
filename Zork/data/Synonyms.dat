@@ -4,7 +4,7 @@ quit: quit, retire
 eat: eat, consume, chew, devour, dine, ingest, nibble, swallow
 help: help
 kill: kill, execute, murder, slay
-attack: attack, assail, charge, strike, destroy
+attack: attack, assail, charge, strike, destroy, hit
 look: look, consider, glance, admire, see
 save: save
 restore: restore
@@ -26,7 +26,7 @@ west: west, right, w, westward
 up: up, u
 down:down, d
 sword:sword
-hammond's hammer:hammer
+hammond's hammer:hammond's
 chap-men's bone-and-marrow:bone-and-marrow
 magic deck:magic
 conductor's club:conductor's, conductors
