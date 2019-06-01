@@ -85,7 +85,7 @@ Items:
 Enemy:
 Room Name: Narrow Pass
 Room Description: The path narrows. You are ambushed by a Bellissimogre singing 'I am one of man. Slay me, but fear ye what happens upon thy return'.
-Exit Rooms: S-Main Pass, E-Stairs
+Exit Rooms: S-Main Path, E-Stairs
 Items:
 Enemy: Bellissimogre
 Room Name: Stairs
