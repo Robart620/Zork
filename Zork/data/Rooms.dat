@@ -26,12 +26,12 @@ Enemy:
 Room Name: Blacksmith
 Room Description: A blacksmith stands infront of you. "Welcome O'Unadorned traveller. Get thee assorted arms and armour for thy travels." He smells like overripe bananas and wine.
 Exit Rooms: E-Town Square
-Items: Vegan Pork-Chop, Hammond's Hammer, Sword
+Items: Hammond's Hammer, Sword
 Enemy:
 Room Name: Supply Depot
 Room Description: A supply store manned by a solitary gentleman without much to say.
 Exit Rooms: W-Town Square
-Items: Old Provisions
+Items: Old Provisions, Vegan Pork-Chop 
 Enemy:
 Room Name: Town Road
 Room Description: As you proceed, you find yourself at the end the broken road that leads into town. To the east: the Town Center, to the south: the town square, and to the west: a mysterious builind upon which the words 'Haus' are written. 

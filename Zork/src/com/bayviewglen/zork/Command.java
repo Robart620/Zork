@@ -26,7 +26,8 @@ class Command {
 	private String direction;
 	private String item;
 	private String enemy;
-
+	private String[] foodItems = { "warm milk", "apple", "slab of meat", "singular baby carrot", "vegan pork-chop", "kard master kevin's head" };
+	//private String foodItem;
 	/**
 	 * Create a command object. First and second word must be supplied, but either
 	 * one (or both) can be null. The command word should be null to indicate that
@@ -56,19 +57,23 @@ class Command {
 	}
 	//
 
-	public String getFoodItem() {
-		return commandWord;
-
-	}
 
 	public boolean hasFoodItem() {
-		return !commandWord.equals(null);
+		for(String a : foodItems) {
+			if(a.equals(item))
+				return true;
+		}
+		return false;
+			
 	}
 
-//	public String getFoodItem() {
-//		return commandWord;
-//		
-//	}
+	public String getFoodItem() {
+		for(String a : foodItems) {
+			if(a.equals(item))
+				return item;
+		}
+		return null;
+	}
 
 	/**
 	 * Return true if this command was not understood.
