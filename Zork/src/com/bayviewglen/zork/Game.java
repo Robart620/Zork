@@ -37,7 +37,7 @@ class Game {
 	private Poker poker;
 
 	public final int MAX_INVENTORY_WEIGHT = 100;
-	private final String STARTING_ROOM = "BLACKSMITH";
+	private final String STARTING_ROOM = "GRASSY_KNOLL";
 	private final String STARTING_ITEM = "LAMP";
 
 	private void initKeyItems(String fileName) throws Exception {
@@ -218,7 +218,7 @@ class Game {
 
 	/**
 	 * Create the game and initialise its internal map, utility items, key items and
-	 * enemies. Also used to set starting room
+	 * enemies. Also used to set starting room and starting item.
 	 */
 	public Game() {
 		try {
@@ -318,7 +318,7 @@ class Game {
 				System.out.println(
 						"\"Kowabunga it is\" you mutter, right before hurling your body to it's untimely demise below");
 				playerHealth = 0;
-			} else 
+			} else
 				System.out.println("You hop on the spot...like an idiot. All your items clunk together as you land.");
 		}
 
@@ -359,6 +359,13 @@ class Game {
 		return false;
 	}
 
+	/**
+	 * allows player to pick up items from the room they are in.
+	 * 
+	 * @param command
+	 * @return whether or not the game has finished by the player picking up Kard
+	 *         Master Kevin's Head.
+	 */
 	private boolean take(Command command) {
 		for (Items i : currentRoom.itemsList) {
 			if (command.getItem().equals((i.getName().toLowerCase()))) {
@@ -366,7 +373,7 @@ class Game {
 					currentRoom.itemsList.remove(i);
 					inventory.add(i);
 					System.out.println("you pick up the " + i.getName());
-					if (i.getName().equals("Kard Master Kevin's tataHead"))
+					if (i.getName().equals("Kard Master Kevin's Head"))
 						return true;
 					else
 						return false;
@@ -379,6 +386,12 @@ class Game {
 		return false;
 	}
 
+	/**
+	 * Player combat with enemy in room they are in. When enemy dies, it drops an
+	 * item and is removed from the room.
+	 * 
+	 * @param command
+	 */
 	private void combat(Command command) {
 		if (command.hasItemWord() && !inventory.isEmpty()) {
 			for (Items i : inventory) {
@@ -405,6 +418,11 @@ class Game {
 			System.out.println("You've gotta hit em with something you have.");
 	}
 
+	/**
+	 * Player eats certain KeyItems to increase their health.
+	 * 
+	 * @param command
+	 */
 	private void eat(Command command) {
 		if (!command.hasFoodItem()) {
 			System.out.println("What're you trynna eat, home boy?");
@@ -425,7 +443,6 @@ class Game {
 		}
 	}
 
-	// implementations of user commands:
 	/**
 	 * Print out some help information. Here we print some stupid, cryptic message
 	 * and a list of the command words.
@@ -438,6 +455,11 @@ class Game {
 		parser.showCommands();
 	}
 
+	/**
+	 * Player drops stuff from their inventory into the room they are in.
+	 * 
+	 * @param command
+	 */
 	private void drop(Command command) {
 		if (command.hasItemWord() && !inventory.isEmpty()) {
 			for (/* Items i : inventory */int i = 0; i < inventory.size(); i++) {
@@ -447,8 +469,7 @@ class Game {
 					inventory.remove(inventory.get(i));
 					return;
 
-				} else
-					System.out.println("You can only drop items you have in your inventory");
+				} 
 			}
 		} else
 			System.out.println("You have nothing in your inventory");
