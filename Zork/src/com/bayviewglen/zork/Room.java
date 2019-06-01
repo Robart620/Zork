@@ -1,4 +1,5 @@
 package com.bayviewglen.zork;
+
 /*
  * Class Room - a room in an adventure game.
  *
@@ -18,121 +19,145 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-class Room 
-{
+
+class Room {
 	private String roomName;
-    private String description;
-    private HashMap<String, Room> exits;        // stores exits of this room.
-    public List<Items> itemsList = new ArrayList<Items>();
-    public Enemy roomEnemy;
-/**
-     * Create a room described "description". Initially, it has no exits.
-     * "description" is something like "a kitchen" or "an open court yard".
-     */
-    public Room(String description) 
-    {
-        this.description = description;
-        exits = new HashMap<String, Room>();
-    }
-    public Room() {
-		// default constructor.
-    	roomName = "DEFAULT ROOM";
-    	description = "DEFAULT DESCRIPTION";
-    	exits = new HashMap<String, Room>();
-	}
-	public void setExit(char direction, Room r) throws Exception{
-    	String dir= "";
-    	switch (direction){
-    	case 'E': dir = "east";break;
-    	case 'W': dir = "west";break;
-    	case 'S': dir = "south";break;
-    	case 'N': dir = "north";break;
-    	case 'U': dir = "up";break;
-    	case 'D': dir = "down";break;
-    	default: throw new Exception("Invalid Direction");
-    	
-    	}
-    	
-    	exits.put(dir, r);
-    }
-    
+	private String description;
+	private HashMap<String, Room> exits; // stores exits of this room.
+	public List<Items> itemsList = new ArrayList<Items>();
+	public Enemy roomEnemy;
+
 	/**
-     * Define the exits of this room.  Every direction either leads to
-     * another room or is null (no exit there).
-     */
-    public void setExits(Room north, Room east, Room south, Room west, Room up, Room down) 
-    {
-        if(north != null)
-            exits.put("north", north);
-        if(east != null)
-            exits.put("east", east);
-        if(south != null)
-            exits.put("south", south);
-        if(west != null)
-            exits.put("west", west);
-        if(up != null)
-            exits.put("up", up);
-        if(up != null)
-            exits.put("down", down);
-        
-    }
-/**
-     * Return the description of the room (the one that was defined in the
-     * constructor).
-     */
-    public String shortDescription()
-    {
-        return "Room: " + roomName +"\n\n" + description;
-    }
-/**
-     * Return a long description of this room, on the form:
-     *     You are in the kitchen.
-     *     Exits: north west
-     */
-    public String longDescription()
-    {
-    	if(roomEnemy == null)
-    		 return "Room: " + roomName +"\n\n" + description + "\n" + exitString();
-        return "Room: " + roomName +"\n\n" + description +"\n" + roomEnemy.getName() + " stares you down" + "\n" + exitString();
-    }
-/**
-     * Return a string describing the room's exits, for example
-     * "Exits: north west ".
-     */
-    private String exitString()
-    {
-        String returnString = "Exits:";
+	 * Create a room described "description". Initially, it has no exits.
+	 * "description" is something like "a kitchen" or "an open court yard".
+	 */
+	public Room(String description) {
+		this.description = description;
+		exits = new HashMap<String, Room>();
+	}
+
+	public Room() {
+		// default constructor.
+		roomName = "DEFAULT ROOM";
+		description = "DEFAULT DESCRIPTION";
+		exits = new HashMap<String, Room>();
+	}
+
+	public void setExit(char direction, Room r) throws Exception {
+		String dir = "";
+		switch (direction) {
+		case 'E':
+			dir = "east";
+			break;
+		case 'W':
+			dir = "west";
+			break;
+		case 'S':
+			dir = "south";
+			break;
+		case 'N':
+			dir = "north";
+			break;
+		case 'U':
+			dir = "up";
+			break;
+		case 'D':
+			dir = "down";
+			break;
+		default:
+			throw new Exception("Invalid Direction");
+
+		}
+
+		exits.put(dir, r);
+	}
+
+	/**
+	 * Define the exits of this room. Every direction either leads to another room
+	 * or is null (no exit there).
+	 */
+	public void setExits(Room north, Room east, Room south, Room west, Room up, Room down) {
+		if (north != null)
+			exits.put("north", north);
+		if (east != null)
+			exits.put("east", east);
+		if (south != null)
+			exits.put("south", south);
+		if (west != null)
+			exits.put("west", west);
+		if (up != null)
+			exits.put("up", up);
+		if (up != null)
+			exits.put("down", down);
+
+	}
+
+	/**
+	 * Return the description of the room (the one that was defined in the
+	 * constructor).
+	 */
+	public String shortDescription() {
+		return "Room: " + roomName + "\n\n" + description;
+	}
+
+	/**
+	 * Return a long description of this room, on the form: You are in the kitchen.
+	 * Exits: north west
+	 */
+	public String longDescription() {
+		if (roomEnemy == null)
+			return "Room: " + roomName + "\n\n" + description + "\n" + exitString();
+		return "Room: " + roomName + "\n\n" + description + "\n" + roomEnemy.getName() + " stares you down" + "\n"
+				+ exitString();
+	}
+
+	/**
+	 * Return a string describing the room's exits, for example "Exits: north west
+	 * ".
+	 */
+	private String exitString() {
+		String returnString = "Exits:";
 		Set<String> keys = exits.keySet();
-        for(Iterator<String> iter = keys.iterator(); iter.hasNext(); )
-            returnString += " " + iter.next();
-        return returnString;
-    }
-/**
-     * Return the room that is reached if we go from this room in direction
-     * "direction". If there is no room in that direction, return null.
-     */
-    public Room nextRoom(String direction) 
-    {
-        return (Room)exits.get(direction);
-    }
-    public String getRoomName() {
+		for (Iterator<String> iter = keys.iterator(); iter.hasNext();)
+			returnString += " " + iter.next();
+		return returnString;
+	}
+
+	/**
+	 * Return the room that is reached if we go from this room in direction
+	 * "direction". If there is no room in that direction, return null.
+	 */
+	public Room nextRoom(String direction) {
+		return (Room) exits.get(direction);
+	}
+
+	public String getRoomName() {
 		return roomName;
 	}
-    public void setRoomName(String roomName) {
+
+	public void setRoomName(String roomName) {
 		this.roomName = roomName;
 	}
-    public String getDescription() {
+
+	public String getDescription() {
 		return description;
 	}
-    public void setDescription(String description) {
+
+	public void setDescription(String description) {
 		this.description = description;
 	}
-    public boolean containsEnemy() {
-    	return (!(roomEnemy == null));
-    }
+
+	public boolean containsEnemy() {
+		return (!(roomEnemy == null));
+	}
+
 	public Enemy getEnemy() {
 		return roomEnemy;
 	}
+
+	/**
+	 * Removes the enemy from the room and puts the enemy's death item in the room.
+	 */
 	public void killEnemy() {
 		itemsList.add(roomEnemy.getDeathItem());
 		roomEnemy = null;

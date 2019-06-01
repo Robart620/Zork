@@ -1,13 +1,19 @@
 package com.bayviewglen.zork;
 
 /**
- * Class KeyItems - an extension of the items class that holds items which
- * advance the state of the game through their possession.
+ * Class KeyItems - an extension of the items class that holds items which which
+ * the player can use for non-combative purposes.
+ * 
+ * 
  * 
  * @author rpurcaru
  *
  */
 class KeyItem extends Items {
+	// Contents either holds a String that is attached to the KeyItem which can
+	// either be a message, which reveals something about the item, or a number in
+	// the case of a food item which allows the player to get health from eating the
+	// item.
 	private String contents;
 
 	public KeyItem() {
