@@ -37,7 +37,7 @@ class Game {
 	private Poker poker;
 
 	public final int MAX_INVENTORY_WEIGHT = 100;
-	private final String STARTING_ROOM = "BLACKSMITH";
+	private final String STARTING_ROOM = "GRASSY_KNOLL";
 	private final String STARTING_ITEM = "LAMP";
 
 	private void initKeyItems(String fileName) throws Exception {
@@ -379,9 +379,11 @@ class Game {
 						return false;
 				} else {
 					System.out.println("The " + i.getName() + " is too heavy... weakling");
+					return false;
 				}
 			} else
 				System.out.println("That item is not here.");
+			return false;
 		}
 		return false;
 	}
