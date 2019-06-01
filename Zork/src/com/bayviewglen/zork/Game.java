@@ -437,8 +437,10 @@ class Game {
 					KeyItem item = (KeyItem) i;
 					playerHealth += Integer.parseInt(item.getContents());
 					System.out.println("You have" + playerHealth + " HP.");
+					return;
 				} catch (Exception e) {
 					System.out.println("You can't eat " + i.getName() + "... thought that was somewhat obvious");
+					return;
 				}
 
 			}
