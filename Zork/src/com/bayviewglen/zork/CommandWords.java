@@ -80,12 +80,10 @@ class CommandWords {
 	 * Print all valid commands to System.out.
 	 */
 	public void showAll() {
-		String[] keys = getKeys(wordsMap);
-		for (int i = 0; i < keys.length; i++) {
-			for (String a : wordsMap.get(keys[i]))
+		String[] keys = getKeys(wordsMap);	
+			for (String a : wordsMap.get(keys[1]))
 				System.out.println(a);
-			// System.out.print(wordsMap.get(keys[i]));
-		}
+		
 	}
 
 	public String[] getKeys(HashMap<String, String[]> map) {
