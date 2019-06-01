@@ -476,7 +476,7 @@ class Game {
 					inventory.remove(inventory.get(i));
 					return;
 
-				} 
+				}
 			}
 		} else
 			System.out.println("You have nothing in your inventory");

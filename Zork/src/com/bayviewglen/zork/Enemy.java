@@ -3,8 +3,8 @@ package com.bayviewglen.zork;
 /**
  * Class Enemy - an enemy which the user comes across during the adventure.
  * 
- * Each enemy has health that the player can reduce and damage that is dealt to the
- * player during combat. 
+ * Each enemy has health that the player can reduce and damage that is dealt to
+ * the player during combat.
  * 
  * @author rpurcaru
  *

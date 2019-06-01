@@ -42,31 +42,31 @@ class CommandWords {
 	 **/
 	public static boolean isCommand(String aString) {
 		for (String a : wordsMap.get("verb")) {
-			if(a.equals(aString))
+			if (a.equals(aString))
 				return true;
 		}
 		return false;
 	}
-	
+
 	public static boolean isDirection(String aString) {
 		for (String a : wordsMap.get("direction")) {
-			if(a.equals(aString))
+			if (a.equals(aString))
 				return true;
 		}
 		return false;
 	}
-	
+
 	public static boolean isEnemy(String aString) {
 		for (String a : wordsMap.get("enemy")) {
-			if(a.equals(aString))
+			if (a.equals(aString))
 				return true;
 		}
 		return false;
 	}
-	
+
 	public static boolean isItem(String aString) {
 		for (String a : wordsMap.get("item")) {
-			if(a.equals(aString)) {
+			if (a.equals(aString)) {
 				return true;
 			}
 		}
@@ -80,10 +80,10 @@ class CommandWords {
 	 * Print all valid commands to System.out.
 	 */
 	public void showAll() {
-		String[] keys = getKeys(wordsMap);	
-			for (String a : wordsMap.get(keys[1]))
-				System.out.println("\t- " + a);
-		
+		String[] keys = getKeys(wordsMap);
+		for (String a : wordsMap.get(keys[1]))
+			System.out.println("\t- " + a);
+
 	}
 
 	public String[] getKeys(HashMap<String, String[]> map) {

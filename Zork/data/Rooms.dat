@@ -10,7 +10,7 @@ Items: Copper Shortsword
 Enemy:
 Room Name: Tall Tree
 Room Description: You stand at the foot of a tall tree. It seems like it may have been climbable not too long ago, but it is far too frail now.
-Exits: S-Grassy Knoll, N-Town Entrance, E-Grassy Knoll, W-Grassy Knoll
+Exits: S-Grassy Knoll, N-Town Entrance
 Items: Apple
 Enemy:
 Room Name: Town Entrance
