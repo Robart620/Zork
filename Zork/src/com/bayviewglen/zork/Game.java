@@ -202,7 +202,6 @@ class Game {
 				for (String s : tempExits.keySet()) {
 					// s = direction
 					// value is the room.
-
 					String roomName2 = tempExits.get(s.trim());
 					Room exitRoom = masterRoomMap.get(roomName2.toUpperCase().replaceAll(" ", "_"));
 					roomTemp.setExit(s.trim().charAt(0), exitRoom);
