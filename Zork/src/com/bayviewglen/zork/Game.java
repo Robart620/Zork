@@ -318,8 +318,10 @@ class Game {
 				System.out.println(
 						"\"Kowabunga it is\" you mutter, right before hurling your body to it's untimely demise below");
 				playerHealth = 0;
+				return false;
 			} else
 				System.out.println("You hop on the spot...like an idiot. All your items clunk together as you land.");
+			return false;
 		}
 
 		else if (commandWord.equals("look")) {
