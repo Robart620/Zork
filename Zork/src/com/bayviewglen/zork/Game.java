@@ -37,8 +37,8 @@ class Game {
 	private Poker poker;
 
 	public final int MAX_INVENTORY_WEIGHT = 100;
-	private final String STARTING_ROOM = "GRASSY_KNOLL";
-	private final String STARTING_ITEM = "LAMP";
+	private final String STARTING_ROOM = "BOSS_ROOM";
+	private final String STARTING_ITEM = "HAMMOND'S_HAMMER";
 
 	private void initKeyItems(String fileName) throws Exception {
 		masterKeyItemMap = new HashMap<String, KeyItem>();
@@ -308,7 +308,7 @@ class Game {
 			if (currentRoom.itemsList.isEmpty())
 				System.out.println("Use your eyes moron, ain't nothing here!");
 			else if (command.hasItemWord())
-				take(command);
+				return take(command);
 			else
 				System.out.println("What do you want to take?");
 
@@ -375,7 +375,7 @@ class Game {
 					currentRoom.itemsList.remove(i);
 					inventory.add(i);
 					System.out.println("you pick up the " + i.getName());
-					if (i.getName().equals("Kard Master Kevin's Head"))
+					if (i.getName().toLowerCase().equals("kard master kevin's head"))
 						return true;
 					else
 						return false;
@@ -411,6 +411,7 @@ class Game {
 						System.out.println("You have " + playerHealth + " HP.");
 						if (currentRoom.getEnemy().getHealth() < 1) {
 							currentRoom.killEnemy();
+							return;
 						}
 
 					} catch (Exception e) {
