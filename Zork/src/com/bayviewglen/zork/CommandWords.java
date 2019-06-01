@@ -82,7 +82,7 @@ class CommandWords {
 	public void showAll() {
 		String[] keys = getKeys(wordsMap);	
 			for (String a : wordsMap.get(keys[1]))
-				System.out.println(a);
+				System.out.println("\t- " + a);
 		
 	}
 
