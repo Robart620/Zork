@@ -82,11 +82,11 @@ class Parser {
 			for (int j = 0; j < keys.length; j++) {
 				if (isSynonym(keys[j], givenWords.get(i), synonymsMap)) {
 					givenWords.set(i, keys[j]);
-					
+
 				}
-				
+
 			}
-			//System.out.println(givenWords);
+
 		}
 
 		ArrayList<String> finalWords = new ArrayList<String>();
@@ -96,56 +96,51 @@ class Parser {
 				finalWords.add(givenWords.get(i));
 				hasVerb = true;
 				i = givenWords.size();
-			}		
+			}
 		}
 		if (!hasVerb)
 			finalWords.add(null);
-		
+
 		for (int i = 0; i < givenWords.size(); i++) {
 			if (CommandWords.isDirection(givenWords.get(i))) {
 				finalWords.add(givenWords.get(i));
 				hasDirection = true;
 				i = givenWords.size();
-			}		
+			}
 		}
 		if (!hasDirection)
 			finalWords.add(null);
-		
+
 		for (int i = 0; i < givenWords.size(); i++) {
 			if (CommandWords.isEnemy(givenWords.get(i))) {
 				finalWords.add(givenWords.get(i));
 				hasEnemy = true;
 				i = givenWords.size();
-			}		
+			}
 		}
 		if (!hasEnemy)
 			finalWords.add(null);
-		
+
 		for (int i = 0; i < givenWords.size(); i++) {
 			if (CommandWords.isItem(givenWords.get(i))) {
 				finalWords.add(givenWords.get(i));
 				hasItem = true;
 				i = givenWords.size();
-			}		
+			}
 		}
 		if (!hasItem)
 			finalWords.add(null);
-		
-		//System.out.println(finalWords);
 
-		
 		commandWord = finalWords.get(0);
 		direction = finalWords.get(1);
 		enemy = finalWords.get(2);
 		item = finalWords.get(3);
 
-	
 		// note: we just ignore the rest of the input line.
-		// Now check whether this word is known. If so, create a command
 		// with it. If not, create a "nil" command (for unknown command)
-		
-			return new Command(commandWord, direction, item, enemy);
-		
+
+		return new Command(commandWord, direction, item, enemy);
+
 	}
 
 	/**
@@ -186,7 +181,7 @@ class Parser {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		// System.out.println(map);
+
 		return map;
 
 	}
