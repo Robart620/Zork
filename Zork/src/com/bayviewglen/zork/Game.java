@@ -434,11 +434,12 @@ class Game {
 		}
 		String foodItem = command.getFoodItem();
 		for (Items i : inventory) {
-			if (i instanceof UtilityItem && foodItem.equals(i.getName())) {
+			if (i instanceof KeyItem && foodItem.equals(i.getName().toLowerCase())) {
 				try {
 					KeyItem item = (KeyItem) i;
-					playerHealth += Integer.parseInt(item.getContents());
-					System.out.println("You have" + playerHealth + " HP.");
+					playerHealth += Integer.parseInt(item.getContents().trim());
+					System.out.println("Delicious... You have " + playerHealth + "HP.");
+					inventory.remove(i);
 					return;
 				} catch (Exception e) {
 					System.out.println("You can't eat " + i.getName() + "... thought that was somewhat obvious");
