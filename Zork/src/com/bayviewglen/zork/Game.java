@@ -329,7 +329,7 @@ class Game {
 			if (!currentRoom.itemsList.isEmpty()) {
 				System.out.println("The things around you are: ");
 				for (Items s : currentRoom.itemsList) {
-					System.out.println("\t-" + s.getName());
+					System.out.println("\t- " + s.getName());
 				}
 			}
 			System.out.println("Your inventory contains: ");
