@@ -160,7 +160,7 @@ class Room {
 	 */
 	public void killEnemy() {
 		itemsList.add(roomEnemy.getDeathItem());
-		roomEnemy = null;
 		System.out.println("You just absolutely slaughtered " + roomEnemy.getName() + ". Nice work!");
+		roomEnemy = null;
 	}
 }
