@@ -26,7 +26,7 @@ Enemy:
 Room Name: Blacksmith
 Room Description: A blacksmith stands infront of you. "Welcome O'Unadorned traveller. Get thee assorted arms and armour for thy travels." He smells like overripe bananas and wine.
 Exit Rooms: E-Town Square
-Items: Hammond's Hammer, Vegan Pork-Chop
+Items: Vegan Pork-Chop, Hammond Hammer
 Enemy:
 Room Name: Supply Depot
 Room Description: A supply store manned by a solitary gentleman without much to say.
