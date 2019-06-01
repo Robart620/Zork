@@ -26,7 +26,7 @@ west: west, right, w, westward
 up: up, u
 down:down, d
 sword:sword
-hammond's hammer:hammond's, hammond
+hammond's hammer:hammer
 chap-men's bone-and-marrow:bone-and-marrow
 magic deck:magic
 conductor's club:conductor's, conductors
@@ -49,6 +49,6 @@ theresa-tron's note:note
 warm milk:milk
 apple:apple
 singular baby carrot:carrot
-pork chop:pork
+vegan pork-chop:vegan
 
 
