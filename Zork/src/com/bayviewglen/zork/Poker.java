@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * Class Poker - The three card poker minigame played in the casino.
  * 
- * @author rpurcaru
+ * @author mapitzgrossman
  *
  */
 public class Poker {
