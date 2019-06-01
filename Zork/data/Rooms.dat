@@ -171,7 +171,7 @@ Enemy:
 Room Name: Maze 2
 Room Description: You're lost, eh?
 Exit Rooms: W-Maze 3, D-Maze 5, E-Maze 4, N-Maze 1 
-Items:
+Items: Slab of Meat
 Enemy:
 Room Name: Maze 3
 Room Description: You're lost, eh?
