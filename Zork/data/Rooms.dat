@@ -102,7 +102,7 @@ Room Name: River Landing
 Room Description: Silly river.
 Exit Rooms: W-River Crossing, E-Spooky Grove
 Items:
-Enemy:
+Enemy: Anthrollny
 Room Name: Spooky Grove
 Room Description: You feel unnerved... something isn't right. A ghost charges you!
 Exit Rooms: W-River Landing, N-Foot of Cliff
