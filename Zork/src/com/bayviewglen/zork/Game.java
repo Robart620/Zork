@@ -294,7 +294,7 @@ class Game {
 					System.out.println("\t- " + i.getName());
 				System.out.println();
 			}
-		} else if (commandWord.equals("drop")) 
+		} else if (commandWord.equals("drop"))
 			drop(command);
 		else if (commandWord.equals("go"))
 			goRoom(command);
@@ -327,9 +327,9 @@ class Game {
 				System.out
 						.println(currentRoom.getEnemy().getName() + " is eyeing you down. He clearly wants to tussel.");
 			if (!currentRoom.itemsList.isEmpty()) {
-				System.out.print("The things around you are: ");
+				System.out.println("The things around you are: ");
 				for (Items s : currentRoom.itemsList) {
-					System.out.println(s.getName());
+					System.out.println("\t-" + s.getName());
 				}
 			}
 			System.out.println("Your inventory contains: ");
