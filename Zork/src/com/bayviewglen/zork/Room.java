@@ -161,6 +161,6 @@ class Room {
 	public void killEnemy() {
 		itemsList.add(roomEnemy.getDeathItem());
 		roomEnemy = null;
-		System.out.println("You've killed " + roomEnemy.getName());
+		System.out.println("You just absolutely slaughtered " + roomEnemy.getName() + ". Nice work!");
 	}
 }
